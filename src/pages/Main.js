@@ -1,13 +1,13 @@
-import React, { Fragment } from "react";
+import React from "react";
 import styled from "styled-components";
 import { BrowserRouter } from "react-router-dom";
 import {  Banner, Category, Economy, Footer, Header } from "../components/";
 
 const Main = () => {
     return (
-    <Fragment>
+    <React.Fragment>
         메인입니다 메인입니다.
-    </Fragment>
+    </React.Fragment>
     );
 };
 

@@ -1,11 +1,13 @@
-import React, { Fragment } from "react";
+import React from "react";
 import styled from "styled-components";
+import { BrowserRouter } from "react-router-dom";
+import {  Banner, Category, Economy, Footer, Header } from "../components/";
 
-const DetailNews = (props) => {
+const DetailNews = () => {
     return (
-    <Fragment>
-
-    </Fragment>
+    <React.Fragment>
+        <p>디테일 뉴스입니다</p>
+    </React.Fragment>
     );
 };
 
