@@ -12,7 +12,7 @@ function App() {
                     <Route exact="exact" path="/" component={Main}/>
                     <Route path="/category/" exact="exact" component={CategoryNews}/>
                     <Route path="/search/news/" exact="exact" component={SearchNews}/>
-                    <Route path="/detailnews/ " exact="exact" component={DetailNews}/>
+                    <Route path="/detailnews/" exact="exact" component={DetailNews}/>
                     <Route exact="exact" path="/search" component={Search}/>
                 </ConnectedRouter>
             </BrowserRouter>

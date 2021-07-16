@@ -6,7 +6,7 @@ import {  Banner, Category, Economy, Footer, Header } from "../components/";
 const DetailNews = () => {
     return (
     <React.Fragment>
-        <p>디테일 뉴스입니다</p>
+        디테일뉴스입니다! 
     </React.Fragment>
     );
 };
@@ -16,4 +16,4 @@ DetailNews.defaultProps = {
 };
 
 
-export default DetailNews ;
+export default DetailNews;
