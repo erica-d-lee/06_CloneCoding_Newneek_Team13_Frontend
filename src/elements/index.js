@@ -1,9 +1,9 @@
 import Grid from "./Grid";
 import Image from "./Image";
 import Button from "./Button";
-import Manu from "./Manu";
+import Menu from "./Menu";
 import Text from "./Text";
 
 
 
-export { Grid, Image, Button, Manu, Text };
+export { Grid, Image, Button, Menu, Text };
