@@ -11,7 +11,7 @@ const Search = () => {
     );
 };
 
-Search .defaultProps = {
+Search.defaultProps = {
     
 };
 

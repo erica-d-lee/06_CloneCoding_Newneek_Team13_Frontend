@@ -6,8 +6,9 @@ import {  Banner, Category, Economy, Footer, Header } from "../components/";
 const Main = () => {
     return (
     <React.Fragment>
-        메인입니다 메인입니다.
-        <Footer/>
+     <Header/>
+     <Footer/>
+                    
     </React.Fragment>
     );
 };

@@ -1,6 +1,7 @@
 import React from "react";
 import {Grid, Text, Button} from "../elements";
 import styled from "styled-components";
+import {history} from "../redux/configureStore";
 const Footer = () => {
     return (
         <div>

@@ -1,21 +1,21 @@
 import React from 'react';
-import {Search, CategoryNews, DetailNews, Main, SearchNews} from "../pages";
-import {BrowserRouter, Route,} from "react-router-dom";
-import {ConnectedRouter} from "connected-react-router";
+import { ConnectedRouter } from "connected-react-router";
 import {history} from "../redux/configureStore";
+import {Search, CategoryNews, DetailNews, Main, SearchNews} from "../pages";
+import {Route,} from "react-router-dom";
+
+
 
 function App() {
     return (
         <React.Fragment>
-            <BrowserRouter>
-                <ConnectedRouter history={history}>
-                    <Route exact="exact" path="/" component={Main}/>
-                    <Route path="/category/" exact="exact" component={CategoryNews}/>
-                    <Route path="/search/news/" exact="exact" component={SearchNews}/>
-                    <Route path="/detailnews/" exact="exact" component={DetailNews}/>
-                    <Route exact="exact" path="/search" component={Search}/>
-                </ConnectedRouter>
-            </BrowserRouter>
+            <ConnectedRouter history={history}>
+              <Route path="/search/news"  exact component={SearchNews}/>
+              <Route path="/search" exact component={Search}/>
+              <Route path="/"  exact component={Main}/>
+              <Route path="/category"  exact component={CategoryNews}/>
+              <Route path="/detailnews"  exact component={DetailNews}/>
+           </ConnectedRouter>
         </React.Fragment>
     );
 }

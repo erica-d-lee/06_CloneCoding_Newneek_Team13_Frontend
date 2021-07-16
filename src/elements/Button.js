@@ -39,8 +39,7 @@ const SearchButton = styled.button`
     color: #161616;
     align-items: center;
     justify-content: center;
-    width: 48px;
-    height: 48px;
+    
     border: 1px solid #161616;
     box-sizing: border-box;
     appearance: auto;
