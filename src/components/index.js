@@ -1,4 +1,3 @@
-
 import Category from "./Category";
 import Economy from "./Economy";
 import Footer from "./Footer";

@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import styled from "styled-components";
 
-const DetailNews = () => {
+const DetailNews = (props) => {
     return (
     <Fragment>
 
