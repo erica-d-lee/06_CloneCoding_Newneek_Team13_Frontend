@@ -3,9 +3,9 @@ import styled from "styled-components";
 
 const Footer = () => {
     return (
-    <Fragment>
+        <React.Fragment>
 
-    </Fragment>
+        </React.Fragment>
     );
 };
 
