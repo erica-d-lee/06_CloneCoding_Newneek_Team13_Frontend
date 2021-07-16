@@ -7,6 +7,7 @@ const Main = () => {
     return (
     <React.Fragment>
         메인입니다 메인입니다.
+        <Footer/>
     </React.Fragment>
     );
 };
