@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import styled from "styled-components";
 import { BrowserRouter } from "react-router-dom";
-import {  Banner, Category, Economy, Footer, Header } from "../components/.";
+import {  Banner, Category, Economy, Footer, Header } from "../components/";
 
 const Main = () => {
     return (
@@ -17,4 +17,3 @@ Main.defaultProps = {
 
 
 export default Main ;
- 

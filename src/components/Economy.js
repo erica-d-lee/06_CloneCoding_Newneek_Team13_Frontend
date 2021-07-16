@@ -3,9 +3,9 @@ import styled from "styled-components";
 
 const Economy = () => {
     return (
-    <React.Fragment>
+        <React.Fragment>
 
-    </React.Fragment>
+        </React.Fragment>
     );
 };
 

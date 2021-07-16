@@ -2,10 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Menu = (props) => {
-  const { Img, name, fontSize, letterSpacing } = props;
+  const { Img, name, fontSize, letterSpacing, large } = props;
   const styles = {
     fontSize: fontSize,
     letterSpacing: letterSpacing,
+    large: large,
   };
   return (
     <React.Fragment>
@@ -17,14 +18,14 @@ const Menu = (props) => {
 Menu.defaultProps = {
   Img: '🧨',
   name: 'name',
-  fontSize: '1.125rem',
   letterSpacing: null,
+  large: false,
 };
 
 const Span = styled.span`
   color: #161616;
   cursor: pointer;
-  font-size: ${(props) => props.fontSize};
+  font-size: ${(props) => props.fontSize ? '2rem': '1.125rem'};
   letter-spacing: ${(props) => props.letterSpacing};
 `;
 
