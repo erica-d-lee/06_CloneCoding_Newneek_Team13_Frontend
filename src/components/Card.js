@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import Text from '../elements/Text';
 import logo from '../shared/NEWNEEKlogo.png';
 
@@ -7,8 +8,8 @@ const Card = (props) => {
 
   if (thumbnail) {
     return (                          // 썸네일 있을 때
-      <React.Fragment>
-        <a href style={{boxSizing: 'border-box', position: 'relative', display: 'block', border: '1px solid #161616', cursor: 'pointer', width: 'auto', height: 'auto', overflow: 'hidden'}}>
+      <CardBox>
+        <a href style={{boxSizing: 'border-box', position: 'relative', display: 'block', border: '1px solid #161616', cursor: 'pointer', height: 'auto', overflow: 'hidden', backgroundColor: '#ebebeb'}}>
           <div>
             <img src={thumbnail} style={{width: 'auto', height: 'auto', overflow: 'hidden', boxSizing: 'border-box', position: 'relative', verticalAlign: 'middle'}} alt=''></img>
             <div style={{padding: '1.5rem 1.75rem', display: 'block'}}>
@@ -18,13 +19,13 @@ const Card = (props) => {
             </div>
           </div>
         </a>
-      </React.Fragment>
+      </CardBox>
     )
   } else {
     return (                          // 썸네일 없을 때
-      <React.Fragment>
+      <CardBox>
         <a href style={{boxSizing: 'border-box', position: 'relative', display: 'block', border: '1px solid #161616', cursor: 'pointer', width: 'auto', height: 'auto', overflow: 'hidden'}}>
-          <div style={{width: '100%', height: '100%'}}>
+          <div style={{width: '100%', height: '100%', position: 'absolute'}}>
             <div style={{padding: '1.5rem 1.75rem', display: 'block', boxSizing: 'border-box'}}>
               <Text span value={emoji} display='block' margin='-1rem 0 0 0' fontSize='3rem'/>
               <Text mainTitle value={title} margin='0.5rem 0 1rem 0' fontWeight='700' lineHeight='1.4' wordBreak='keep-all'/>
@@ -34,7 +35,7 @@ const Card = (props) => {
             </div>
           </div>
         </a>
-      </React.Fragment>
+      </CardBox>
     )
   }
 };
@@ -48,5 +49,18 @@ Card.defaultProps = {
   emoji: '🧨',
   content: 'content',
 }
+
+const CardBox = styled.div`
+  width: 25%;
+  @media (max-width: 1360px) {
+    width: 33.3333%;
+  }
+  @media (max-width: 900px) {
+    width: 50%;
+  }
+  @media (max-width: 720px) {
+    width: 100%;
+  }
+`;
 
 export default Card;
