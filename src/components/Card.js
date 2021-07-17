@@ -9,7 +9,7 @@ const Card = (props) => {
   if (thumbnail) {
     return (                          // 썸네일 있을 때
       <CardBox>
-        <a href style={{boxSizing: 'border-box', position: 'relative', display: 'block', borderStyle: 'solid', borderColor: '#161616', borderWidth: '0 1px 1px 0', borderCollapse: 'collapse', cursor: 'pointer', height: 'auto', overflow: 'hidden', backgroundColor: '#ebebeb'}}>
+        <a href style={{boxSizing: 'border-box', position: 'relative', display: 'block', borderStyle: 'solid', borderColor: '#161616', borderWidth: '0 1px 1px 0', borderCollapse: 'collapse', cursor: 'pointer', height: 'auto', overflow: 'hidden'}}>
           <div>
             <img src={thumbnail} style={{width: 'auto', height: 'auto', overflow: 'hidden', boxSizing: 'border-box', position: 'relative', verticalAlign: 'middle'}} alt=''></img>
             <div style={{padding: '1.5rem 1.75rem', display: 'block'}}>
@@ -60,6 +60,12 @@ const CardBox = styled.div`
   }
   @media (max-width: 720px) {
     width: 100%;
+  }
+  background-color: #ebebeb;
+  filter: grayscale(100%);
+  &:hover {
+    background-color: #fff;
+    filter: grayscale(0%);
   }
 `;
 
