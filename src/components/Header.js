@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import NEWNEEKlogo from "../shared/NEWNEEKlogo.png";
+import searchbtn from "../shared/searchbtn.PNG";
 import {history} from "../redux/configureStore";
 
 const Header = () => {
@@ -17,17 +18,18 @@ const Header = () => {
                                 <span>💰</span>경제기본기
                             </NavButton>
                             <NavButton>
-                                <span>🌹</span>여성의날</NavButton>
+                                <span>🌹</span>여성의 날</NavButton>
                         </NavbarMenuItem>
                     </NavbarMenu>
-                    <NavberLogo>
+                    <NavberLogo onClick={() => {
+                            history.push("/")}}>
                         <img src={NEWNEEKlogo} alt="logo" style={{width: "100%"}}/>
                     </NavberLogo>
                     <SearchButton
                         onClick={() => {
                             history.push("/search");
                         }}>
-                        🔍
+                        <img src={searchbtn} alt="searchbtn" style={{width: "110%", height: "100%"}}/>
                     </SearchButton>
                 </NavbarInner>
             </Navbar>
@@ -154,7 +156,6 @@ const SearchButton = styled.button `
     box-sizing: border-box;
     background: none;
     cursor: pointer;
-    font: inherit;
     position: relative;
     @media (max-width: 1080px){
     width: 40px;

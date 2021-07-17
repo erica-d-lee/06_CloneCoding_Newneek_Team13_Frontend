@@ -56,15 +56,13 @@ const SubscribeGosum = styled.div `
     max-width: 480px;
     margin-left: 60px;
     @media (max-width: 1080px){
-    width:75%;
-    left: auto;
-    top: auto;
-    margin: -2rem auto auto;
-    position: relative;
-    z-index: 6; 
-}
-`;
-
+        width:75%;
+        left: auto;
+        top: auto;
+        margin: -2rem auto auto;
+        position: relative;
+        z-index: 6; 
+}`;
 const IntroHeadTitle = styled.text`
     padding: 1rem 0;
     border-bottom: 1px solid #000;

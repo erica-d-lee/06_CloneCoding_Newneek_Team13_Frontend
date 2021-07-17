@@ -1,13 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 import {Menu} from '../elements';
-
+import {history} from '../redux/configureStore';
 const Category = () => {
     return (
     <React.Fragment>
         <nav className='category' style={{marginTop: '-1px', display: 'flex', justifyContent: 'center', borderTop: '1px solid #161616', borderBottom: '1px solid #161616', backgroundColor: '#fff', boxSizing: 'border-box', overflow: 'hidden', position: 'absolute', left: 0, right: 0}}>
             <div className='category-inner' style={{display: 'flex', whiteSpace: 'nowrap', overflow: 'overlay', marginBottom: '1px'}}>
-                <A className='category-link'>전체</A>
+                <A className='category-link' onClick={() => {
+                            history.push("/category");
+                        }}>전체</A>
                 <A className='category-link'><Menu emoji='⚖️' name='국내정치' hover='color: #fb7800;'/></A>
                 <A className='category-link'><Menu emoji='🌐' name='세계' hover='color: #fb7800;'/></A>
                 <A className='category-link'><Menu emoji='🤖' name='테크' hover='color: #fb7800;'/></A>

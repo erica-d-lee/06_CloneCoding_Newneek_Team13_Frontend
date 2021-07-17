@@ -1,12 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 import { BrowserRouter } from "react-router-dom";
-import {  Banner, Category, Economy, Footer, Header } from "../components/";
+import {  Banner, Category, Economy, Footer, Header, Body } from "../components/";
 
-const CategoryNews = () => {
+const CategoryNews = (props) => {
     return (
     <React.Fragment>
-        카테고리뉴스입니다!!
+        <Header/>
+        <Body/>
+        <Footer/>
+
     </React.Fragment>
     );
 };

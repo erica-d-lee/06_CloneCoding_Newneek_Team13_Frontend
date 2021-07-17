@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Text = (props) => {
-  const { value, mainText, mainTitle, detailText, margin, padding, fontWeight, fontSize, color, lineHeight, wordBreak, span, display, overflow, textOverflow, whiteSpace, height, textAlign, wordWrap, wlc, wbo, top, right, bottom, left, mbs, mbe, mis, mie } = props;
-  const styles = { mainText: mainText, mainTitle: mainTitle, detailText: detailText, margin: margin, padding: padding, fontWeight: fontWeight, fontSize: fontSize, color: color, lineHeight: lineHeight, wordBreak: wordBreak, display: display, overflow: overflow, textOverflow: textOverflow, whiteSpace: whiteSpace, height: height, textAlign: textAlign, wordWrap: wordWrap, wlc: wlc, wbo: wbo, top: top, right: right, bottom: bottom, left: left, mbs: mbs, mbe: mbe, mis: mis, mie: mie};
+  const { value, mainText, mainTitle, detailText, margin, padding, fontWeight, fontSize, color, lineHeight, wordBreak, span, display, overflow, textOverflow, whiteSpace, height, textAlign, wordWrap, wlc, wbo, top, right, bottom, left, mbs, mbe, mis, mie, zIndex } = props;
+  const styles = { mainText: mainText, mainTitle: mainTitle, detailText: detailText, margin: margin, padding: padding, fontWeight: fontWeight, fontSize: fontSize, color: color, lineHeight: lineHeight, wordBreak: wordBreak, display: display, overflow: overflow, textOverflow: textOverflow, whiteSpace: whiteSpace, height: height, textAlign: textAlign, wordWrap: wordWrap, wlc: wlc, wbo: wbo, top: top, right: right, bottom: bottom, left: left, mbs: mbs, mbe: mbe, mis: mis, mie: mie, zIndex: zIndex,};
 
   if (span) {
     return (
@@ -51,7 +51,8 @@ Text.defaultProps = {
   mbs: null,          // margin-block-start
   mbe: null,          // margin-block-end
   mis: null,          // margin-inline-start
-  mie: null,          // margin-inline-end
+  mie: null,
+  zIndex: null,          // margin-inline-end
 };
 
 const S = styled.span`
@@ -92,6 +93,7 @@ const P = styled.p`
   ${(props) => props.detailText ? 'font-size: 1.125rem': ''};
   ${(props) => props.searchTitle ? 'font-size: 1.25rem': ''};
   ${(props) => props.searchText ? 'font-size: 14px': ''};
+  z-index: ${(props)=>props.zIndex};
   font-size: ${(props) => props.fontSize};
   margin: ${(props) => props.margin};
   padding: ${(props) => props.padding};

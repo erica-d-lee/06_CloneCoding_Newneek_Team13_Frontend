@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { BrowserRouter } from "react-router-dom";
 import {  Banner, Category, Economy, Footer, Header, CardList, Body, IntroHead } from "../components/";
+import BottomBar from "../components/BottomBar";
 
 const Main = (props) => {
     return (
@@ -10,6 +11,8 @@ const Main = (props) => {
         <IntroHead/>
         <Body/>
         <Footer/>
+        
+        <BottomBar/>
     </React.Fragment>
     );
 };
