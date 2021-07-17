@@ -54,6 +54,7 @@ const TextFiled=styled.fieldset`
     margin: 0px auto;
     position: relative;
     display: block;
+    
     margin-inline-start: 2px;
     margin-inline-end: 2px;
     padding-block-start: 0.35em;
