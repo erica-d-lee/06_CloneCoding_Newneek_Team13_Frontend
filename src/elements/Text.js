@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Text = (props) => {
-  const { value, mainText, mainTitle, detailText, margin, padding, fontWeight, fontSize, color, lineHeight, wordBreak, span, display, overflow, textOverflow, whiteSpace, height, textAlign, wordWrap, wlc, wbo, top, right, bottom, left } = props;
-  const styles = { mainText: mainText, mainTitle: mainTitle, detailText: detailText, margin: margin, padding: padding, fontWeight: fontWeight, fontSize: fontSize, color: color, lineHeight: lineHeight, wordBreak: wordBreak, display: display, overflow: overflow, textOverflow: textOverflow, whiteSpace: whiteSpace, height: height, textAlign: textAlign, wordWrap: wordWrap, wlc: wlc, wbo: wbo, top: top, right: right, bottom: bottom, left: left};
+  const { value, mainText, mainTitle, detailText, margin, padding, fontWeight, fontSize, color, lineHeight, wordBreak, span, display, overflow, textOverflow, whiteSpace, height, textAlign, wordWrap, wlc, wbo, top, right, bottom, left, mbs, mbe, mis, mie } = props;
+  const styles = { mainText: mainText, mainTitle: mainTitle, detailText: detailText, margin: margin, padding: padding, fontWeight: fontWeight, fontSize: fontSize, color: color, lineHeight: lineHeight, wordBreak: wordBreak, display: display, overflow: overflow, textOverflow: textOverflow, whiteSpace: whiteSpace, height: height, textAlign: textAlign, wordWrap: wordWrap, wlc: wlc, wbo: wbo, top: top, right: right, bottom: bottom, left: left, mbs: mbs, mbe: mbe, mis: mis, mie: mie};
 
   if (span) {
     return (
@@ -48,11 +48,15 @@ Text.defaultProps = {
   right: null,
   bottom: null,
   left: null,
+  mbs: null,          // margin-block-start
+  mbe: null,          // margin-block-end
+  mis: null,          // margin-inline-start
+  mie: null,          // margin-inline-end
 };
 
 const S = styled.span`
   ${(props) => props.mainText ? 'font-size: 1rem': ''};
-  ${(props) => props.mainTitle ? 'font-size: 1.5rem': ''};
+  ${(props) => props.mainTitle ? 'font-size: 1.25rem': ''};
   ${(props) => props.detailText ? 'font-size: 1.125rem': ''};
   ${(props) => props.searchTitle ? 'font-size: 1.25rem': ''};
   ${(props) => props.searchText ? 'font-size: 14px': ''};
@@ -76,11 +80,15 @@ const S = styled.span`
   right: ${(props) => props.right};
   bottom: ${(props) => props.bottom};
   left: ${(props) => props.left};
+  margin-block-start: ${(props) => props.mbs};
+  margin-block-end: ${(props) => props.mbe};
+  margin-inline-start: ${(props) => props.mis};
+  margin-inline-end: ${(props) => props.mie};
 `;
 
 const P = styled.p`
   ${(props) => props.mainText ? 'font-size: 1rem': ''};
-  ${(props) => props.mainTitle ? 'font-size: 1.5rem': ''};
+  ${(props) => props.mainTitle ? 'font-size: 1.25rem': ''};
   ${(props) => props.detailText ? 'font-size: 1.125rem': ''};
   ${(props) => props.searchTitle ? 'font-size: 1.25rem': ''};
   ${(props) => props.searchText ? 'font-size: 14px': ''};
@@ -104,6 +112,10 @@ const P = styled.p`
   right: ${(props) => props.right};
   bottom: ${(props) => props.bottom};
   left: ${(props) => props.left};
+  margin-block-start: ${(props) => props.mbs};
+  margin-block-end: ${(props) => props.mbe};
+  margin-inline-start: ${(props) => props.mis};
+  margin-inline-end: ${(props) => props.mie};
 `;
 
 export default Text;

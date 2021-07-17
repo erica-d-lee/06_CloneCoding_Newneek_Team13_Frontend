@@ -9,11 +9,11 @@ const Card = (props) => {
   if (thumbnail) {
     return (                          // 썸네일 있을 때
       <CardBox>
-        <a href style={{boxSizing: 'border-box', position: 'relative', display: 'block', border: '1px solid #161616', cursor: 'pointer', height: 'auto', overflow: 'hidden', backgroundColor: '#ebebeb'}}>
+        <a href style={{boxSizing: 'border-box', position: 'relative', display: 'block', borderStyle: 'solid', borderColor: '#161616', borderWidth: '0 1px 1px 0', borderCollapse: 'collapse', cursor: 'pointer', height: 'auto', overflow: 'hidden', backgroundColor: '#ebebeb'}}>
           <div>
             <img src={thumbnail} style={{width: 'auto', height: 'auto', overflow: 'hidden', boxSizing: 'border-box', position: 'relative', verticalAlign: 'middle'}} alt=''></img>
             <div style={{padding: '1.5rem 1.75rem', display: 'block'}}>
-              <Text mainTitle value={title} margin='0 0 0.5rem 0' fontWeight='700' lineHeight='1.4' wordBreak='keep-all'/>
+              <Text mainTitle value={title} margin='0 0 0.5rem 0' fontWeight='700' lineHeight='1.4' wordBreak='keep-all' mbs='1em' mbe='1em'/>
               <Text span value={date} padding='0' margin='0 1em 0 0'/>
               <Text span value={category} />
             </div>
@@ -24,7 +24,7 @@ const Card = (props) => {
   } else {
     return (                          // 썸네일 없을 때
       <CardBox>
-        <a href style={{boxSizing: 'border-box', position: 'relative', display: 'block', border: '1px solid #161616', cursor: 'pointer', width: 'auto', height: 'auto', overflow: 'hidden'}}>
+        <a href style={{boxSizing: 'border-box', position: 'relative', display: 'block', borderStyle: 'solid', borderColor: '#161616', borderWidth: '0 1px 1px 0', borderCollapse: 'collapse', cursor: 'pointer', width: 'auto', height: 'auto', overflow: 'hidden'}}>
           <div style={{width: '100%', height: '100%', position: 'absolute'}}>
             <div style={{padding: '1.5rem 1.75rem', display: 'block', boxSizing: 'border-box'}}>
               <Text span value={emoji} display='block' margin='-1rem 0 0 0' fontSize='3rem'/>

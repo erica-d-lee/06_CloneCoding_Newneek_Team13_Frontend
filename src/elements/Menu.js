@@ -2,13 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Menu = (props) => {
-  const { emoji, name, letterSpacing, large, fontWeight, lineHeight, wordBreak, } = props;
+  const { emoji, name, letterSpacing, large, fontWeight, lineHeight, wordBreak, hover, } = props;
   const styles = {
     letterSpacing: letterSpacing,
     large: large,
     fontWeight: fontWeight,
     lineHeight: lineHeight,
     wordBreak: wordBreak,
+    hover: hover,
   };
   return (
     <React.Fragment>
@@ -25,6 +26,7 @@ Menu.defaultProps = {
   fontWeight: null,
   lineHeight: null,
   wordBreak : null,
+  hover: null,
 };
 
 const Span = styled.span`
@@ -35,6 +37,9 @@ const Span = styled.span`
   font-weight: ${(props) => props.fontWeight};
   line-height: ${(props) => props.lineHeight};
   word-break: ${(props) => props.wordBreak};
+  &:hover {
+    ${(props) => props.hover};
+  }
 `;
 
 export default Menu;
