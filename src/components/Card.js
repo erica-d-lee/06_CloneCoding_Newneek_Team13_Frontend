@@ -4,11 +4,11 @@ import Text from '../elements/Text';
 import logo from '../shared/NEWNEEKlogo.png';
 
 const Card = (props) => {
-  const { img, value, title, date, category, thumbnail, emoji, content } = props;
+  const { img, value, title, date, category, thumbnail, emoji, content, _onClick } = props;
 
   if (thumbnail) {
     return (                          // 썸네일 있을 때
-      <CardBox>
+      <CardBox onClick={_onClick}>
         <a href style={{boxSizing: 'border-box', position: 'relative', display: 'block', borderStyle: 'solid', borderColor: '#161616', borderWidth: '0 1px 1px 0', borderCollapse: 'collapse', cursor: 'pointer', height: 'auto', overflow: 'hidden'}}>
           <div>
             <img src={thumbnail} style={{width: 'auto', height: 'auto', overflow: 'hidden', boxSizing: 'border-box', position: 'relative', verticalAlign: 'middle'}} alt=''></img>
@@ -48,6 +48,7 @@ Card.defaultProps = {
   category: 'category',
   emoji: '🧨',
   content: 'content',
+  _onClick: () => {},
 }
 
 const CardBox = styled.div`

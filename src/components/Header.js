@@ -21,7 +21,7 @@ const Header = () => {
                         </NavbarMenuItem>
                     </NavbarMenu>
                     <NavberLogo>
-                        <img src={NEWNEEKlogo} alt="logo" width="100%"/>
+                        <img src={NEWNEEKlogo} alt="logo" style={{width: "100%"}}/>
                     </NavberLogo>
                     <SearchButton
                         onClick={() => {
@@ -44,11 +44,7 @@ const NavbarTop = styled.div `
     position: relative;
 `;
 const NavbarTopIn = styled.div `
-    background: linear-gradient(
-    -45deg
-    ,#ebebeb 11px,transparent 0),linear-gradient(
-    45deg
-    ,#ebebeb 11px,transparent 0);
+    background: linear-gradient(-45deg,#ebebeb 11px,transparent 0),linear-gradient(45deg,#ebebeb 11px,transparent 0);
     background-position: left-bottom;
     background-repeat: repeat-x;
     background-size: 24px 24px;
@@ -60,18 +56,14 @@ const NavbarTopIn = styled.div `
     width: 100%;
     height: 32px;
     z-index: 7;
-     @media (max-width: 1080px){
-        background: linear-gradient(
-    -45deg
-    ,#ebebeb 11px,transparent 0),linear-gradient(
-    45deg
-    ,#ebebeb 11px,transparent 0);
-    background-size: 16px 16px;
-    background-repeat: repeat-x;
-    top: 14px;
-    left: 0;
-    height: 16px;
-    z-index: 7;
+    @media (max-width: 1080px){
+        background: linear-gradient(-45deg,#ebebeb 11px,transparent 0),linear-gradient(45deg,#ebebeb 11px,transparent 0);
+        background-size: 16px 16px;
+        background-repeat: repeat-x;
+        top: 14px;
+        left: 0;
+        height: 16px;
+        z-index: 7;
 }
 `;
 const Navbar = styled.div `
@@ -79,7 +71,6 @@ const Navbar = styled.div `
     border-bottom: 1px solid #161616;
     position: relative;
     z-index: 4;
-    
 `;
 
 const NavbarInner = styled.div `
@@ -88,7 +79,11 @@ const NavbarInner = styled.div `
     justify-content: space-between;
     max-width: 1360px;
     margin: 0 auto;
-    padding: 3rem 5% 2.5rem; 
+    padding: 3rem 5% 2.5rem;
+    @media (max-width: 1080px) {
+        padding-top: 3.5rem;
+        padding-bottom: 4rem;
+    };
 `;
 
 const NavbarMenu = styled.div `
@@ -112,7 +107,7 @@ const NavbarMenu = styled.div `
         transition: all .8s cubic-bezier(.165,.84,.44,1);
         -webkit-transform: translateX(-100%);
         transform: translateX(-100%);
-
+    }
 `;
 const NavbarMenuItem = styled.div `
     display: flex;
@@ -130,34 +125,37 @@ const NavButton = styled.div `
     color: #161616;
     text-align: center;
     position: relative;
-    &: hover {
+    &:hover {
         color: #fb7800;
         cursor: pointer;
     }
 `;
 
 const NavberLogo = styled.div `
-display: flex;
-align-items: center;
-justify-content: center;
-width: 220px;
-box-sizing: border-box;
-position: absolute;
-left: 50%;
-transform: translateX(-50%);
-text-rendering: optimizeLegibility;
-cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 220px;
+    box-sizing: border-box;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-rendering: optimizeLegibility;
+    cursor: pointer;
+    @media (max-width: 1080px) {
+        width: 180px;
+    }
 `;
 
 const SearchButton = styled.button `
-width: 48px;
-height: 48px;
-border: 1px solid #161616;
-box-sizing: border-box;
-background: none;
-cursor: pointer;
-font: inherit;
-position: relative;
+    width: 48px;
+    height: 48px;
+    border: 1px solid #161616;
+    box-sizing: border-box;
+    background: none;
+    cursor: pointer;
+    font: inherit;
+    position: relative;
     @media (max-width: 1080px){
     width: 40px;
     height: 40px;
