@@ -12,6 +12,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  background-color: #ebebeb;
 }
 
 @media (max-width: 1080px) {
