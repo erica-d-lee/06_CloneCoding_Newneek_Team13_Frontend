@@ -1,12 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import { BrowserRouter } from "react-router-dom";
-import {  Banner, Category, Economy, Footer, Header, CardList, Body, } from "../components/";
+import {  Banner, Category, Economy, Footer, Header, CardList, Body, IntroHead } from "../components/";
 
 const Main = () => {
     return (
     <React.Fragment>
         <Header/>
+        <IntroHead/>
         <Body/>
         <Footer/>
     </React.Fragment>

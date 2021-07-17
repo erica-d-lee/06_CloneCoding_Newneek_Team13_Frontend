@@ -11,8 +11,7 @@ const SearchNews = (props) => {
     );
 };
 
-SearchNews.defaultProps = {
-    
+SearchNews.defaultProps = {    
 };
 
 
