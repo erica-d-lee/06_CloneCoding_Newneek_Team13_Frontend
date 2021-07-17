@@ -23,10 +23,9 @@ const IntroHead = () => {
                     </IntroHeadMainhead>
                     <Subscribe>
                      <TextFiled>
-                     <SubInput type="text" name="email" class="textfield-input" placeholder="이메일 주소" value=""/></TextFiled>
+                     <SubInput type="text" name="email" placeholder="이메일 주소"/></TextFiled>
                      <TextFiled>
-                     <SubInput type="text" name="name" class="textfield-input" placeholder="닉네임" value=""/>
-                     </TextFiled>
+                     <SubInput type="text" name="name"  placeholder="닉네임" /> </TextFiled>
                      <div margin= "0.5rem 0px 0px;"></div>
                      <CheckBox>
                      <CheckInput/>
@@ -120,9 +119,9 @@ const MobileBlock= styled.div`
     }
 `;
 const IntroHeadDescription = styled.div`
-padding: 2rem 0 3rem;
-background: #fb7800;
-box-sizing: border-box;
+    padding: 2rem 0 3rem;
+    background: #fb7800;
+    box-sizing: border-box;
 
 `;
 const IntroHeadSubhead = styled.text`
@@ -141,10 +140,6 @@ const IntroHeadSubhead = styled.text`
 const IntroHeadMainhead = styled.text`
     margin-top: 1rem;   
     display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
     max-width: 560px;
     font-size: 1.125rem;
     letter-spacing: -.0125rem;
@@ -165,7 +160,6 @@ const Subscribe= styled.form`
     box-sizing: border-box;
     position: relative;
     z-index: 1;
-
 `;
 
 const TextFiled = styled.div`
@@ -180,23 +174,18 @@ font: 14px
 `;
 
 const SubInput = styled.input`
-margin-top: .5rem;
-display: block;
-width: 100%;
-padding: 10px 40px 11px 1.5rem;
-border: 1px solid #161616;
-border-radius: 0;
-box-sizing: border-box;
-box-shadow: 0;
-font: inherit;
-color: #161616;
-transition: all .2s;
-outline: none;
-box-shadow: none;
-}
-
-    `
-    ;
+    margin-top: .5rem;
+    display: block;
+    width: 100%;
+    padding: 11px 1.5rem;
+    border: 1px solid #161616;
+    box-sizing: border-box;
+    color: #161616;
+    transition: all 2s;
+    outline: none;
+    box-shadow: none;
+    height: 48px;
+` ;
 
 const CheckBox = styled.div`
     display: block;
