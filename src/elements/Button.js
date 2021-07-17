@@ -57,6 +57,14 @@ const LoadButton = styled.button`
     cursor: pointer;
     position: relative;
     border: 1px solid #161616;
+    font: inherit;
+    min-width: 104px;
+    outline: none;
+    text-align: center;
+    display: flex !important;
+    justify-content: center;
+    flex-wrap: wrap !important;
+    align-items: flex-start;
     ${(props) => (props.margin ? `margin: ${props.margin};` : "")}
     &:hover {
         background-color: #fb7800;
