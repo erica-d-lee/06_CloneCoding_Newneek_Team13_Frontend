@@ -4,7 +4,7 @@ import {Economy, ProgressBar} from './';
 import {Menu, Button} from '../elements';
 
 const DetailContent = (props) => {
-  const { category, title, date } = props;
+  const { category, title, date, keyword, content } = props;
   const { scrollTop } = document.documentElement;
   return (
     <React.Fragment>
@@ -14,9 +14,16 @@ const DetailContent = (props) => {
             <RunningHead>{category}</RunningHead>
             <Headline>{title}</Headline>
             <HeadDate>{date}</HeadDate>
-            { scrollTop > 0.1 ?
-              <ProgressBar /> : '' }
+            <ProgressBar />
           </PostHead>
+          <PostBody>
+            <div className='Room for Data' style={{padding: '0 0 3rem'}}>{content}</div>
+          </PostBody>
+          <HashTag>
+            <HashItem>{keyword}</HashItem>
+            <HashItem>{keyword}</HashItem>
+            <HashItem>{keyword}</HashItem>
+          </HashTag>
         </Div>
         <Economy />
       </div>
@@ -27,7 +34,9 @@ const DetailContent = (props) => {
 DetailContent.defaultProps = {
   category: '카테고리',
   title: '제목',
-  date: '2021/07/17'
+  date: '2021/07/17',
+  keyword: '#키워드',
+  content: '내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다',
 }
 
 const Div = styled.div`
@@ -70,6 +79,34 @@ const Headline = styled.h2`
 
 const HeadDate = styled.time`
   font-size: 1.125rem;
+`;
+
+const PostBody = styled.div`
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 0 5% 8rem;
+  font-size: 1.125rem;
+  font-weight: 300;
+  line-height: 2;
+  position: relative;
+  display: block;
+`;
+
+const HashTag = styled.section`
+  flex-wrap: wrap;
+  margin: 0 auto 2rem;
+  display: flex;
+  max-width: 640px;
+  padding: 0 5%;
+`;
+
+const HashItem = styled.a`
+  display: block;
+  margin: 0 1rem .5rem 0;
+  font-size: 1rem;
+  color: #161616;
+  text-decoration: none;
+  cursor: pointer;
 `;
 
 
