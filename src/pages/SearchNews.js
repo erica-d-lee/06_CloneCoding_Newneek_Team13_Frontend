@@ -1,12 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 import { BrowserRouter } from "react-router-dom";
-import { Banner, Category, Economy, Footer, Header} from "../components/";
+import { Footer, Header, CardList} from "../components/";
+import { Menu } from '../elements';
 
 const SearchNews = (props) => {
     return (
     <React.Fragment>
-        <p>검색한 결과내역창입니다</p>
+        <Header />
+        <div style={{backgroundColor: '#ebebeb', marginTop: '-1px'}}>
+
+        </div>
+        <Footer />
     </React.Fragment>
     );
 };
