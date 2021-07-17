@@ -11,7 +11,7 @@ const Footer = () => {
                 <span>
                     오늘까지 <b>487회</b> 뉴스레터를 발행했고 
                 </span>
-                <b>351,397명</b>이 구독했어요!
+                <b> 351,397명</b>이 구독했어요!
             </p>
             <Arrow><Line/></Arrow>
         </FooterStatic>

@@ -8,8 +8,8 @@ const DetailContent = (props) => {
   const { scrollTop } = document.documentElement;
   return (
     <React.Fragment>
-      <div style={{backgroundColor: '#ebebeb', marginTop: '-1px'}}>
-        <Div style={{maxWidth: '1360px', position: 'relative', display: 'block', letterSpacing: '-.0125rem'}}>
+      <div style={{backgroundColor: '#ebebeb', marginTop: '-1px', margin: '0 auto', overflow: 'hidden'}}>
+        <Div style={{position: 'relative', display: 'block', letterSpacing: '-.0125rem'}}>
           <PostHead>
             <RunningHead>{category}</RunningHead>
             <Headline>{title}</Headline>
@@ -40,8 +40,6 @@ DetailContent.defaultProps = {
 }
 
 const Div = styled.div`
-  margin: 0 auto;
-  overflow: hidden;
   @media (max-width: 1360px) {
     max-width: 1040px;
   }
