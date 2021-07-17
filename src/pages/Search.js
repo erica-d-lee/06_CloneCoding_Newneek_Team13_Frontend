@@ -19,7 +19,7 @@ const Search = () => {
                 </TextFiled>
                 <SearchResult>
                     <SearchOption>
-                        <SearchTitle>고슴이 추천 키워드</SearchTitle>
+                        <SearchTitle>고슴이 추천 키워드 </SearchTitle>
                         <SearchItem>설문조사</SearchItem>
                         <SearchItem>델타변이</SearchItem>
                         <SearchItem>G7</SearchItem>
