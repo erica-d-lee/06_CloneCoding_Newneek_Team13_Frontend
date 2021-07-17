@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
-import styled from "styled-components";
-import { BrowserRouter } from "react-router-dom";
-import {  Banner, Category, Economy, Footer, Header, CardList, Body, IntroHead } from "../components/";
+import { Footer, Header, Body, IntroHead } from "../components/";
 import {useDispatch, useSelector} from 'react-redux';
 import {actionCreators as newsActions} from '../redux/modules/news';
+import BottomBar from "../components/BottomBar";
 
 const Main = (props) => {
     const dispatch = useDispatch();
@@ -18,6 +17,7 @@ const Main = (props) => {
         <IntroHead/>
         <Body {...news_list} />
         <Footer/>
+        <BottomBar/>
     </React.Fragment>
     );
 };
