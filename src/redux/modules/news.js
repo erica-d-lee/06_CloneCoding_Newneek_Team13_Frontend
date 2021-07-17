@@ -1,6 +1,5 @@
 import { createAction, handleActions } from "redux-actions";
 import {produce} from 'immer';
-import axios from 'axios';
 import {history} from '../configureStore';
 
 // 액션타입
@@ -19,11 +18,24 @@ const setNewsDB = () => {               // 메인페이지 뉴스 목록 불러�
   return function(dispatch) {
     const axios = require('axios');
     axios.get('url').then((response) => {
-      dispatch(setNews(response.data))
+      console.log(response.data);
+      dispatch(setNews(response.data));
     }).catch((err) => {
       console.log(`메인 페이지 뉴스 불러오기 에러: ${err}`);
-    })
-  }
+    });
+  };
+};
+
+const setOneNewsDB = (postId) => {        // 상세페이지 개별 뉴스 불러오기
+  return function(dispatch) {
+    const axios = require('axios');
+    axios.get('url').then((response) => {
+      console.log(response.data);
+      dispatch(setNews(response.data));
+    }).catch((err) => {
+      console.log(`상세 페이지 뉴스 불러오기 에러: ${err}`);
+    });
+  };
 };
 
 // 리듀서 
@@ -39,6 +51,7 @@ export default handleActions(
 // 액션 생성자 
 const actionCreators = {
   setNewsDB,
+  setOneNewsDB,
 }
 
 

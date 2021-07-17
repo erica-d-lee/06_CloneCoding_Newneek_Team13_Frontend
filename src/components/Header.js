@@ -21,7 +21,7 @@ const Header = () => {
                         </NavbarMenuItem>
                     </NavbarMenu>
                     <NavberLogo>
-                        <img src={NEWNEEKlogo} alt="logo" style={{width: "100%"}}/>
+                        <img src={NEWNEEKlogo} alt="logo" style={{width: "100%"}} onClick={() => history.push('/')}/>
                     </NavberLogo>
                     <SearchButton
                         onClick={() => {
