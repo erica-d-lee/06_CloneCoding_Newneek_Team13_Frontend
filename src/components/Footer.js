@@ -13,9 +13,7 @@ const Footer = () => {
                     뉴스레터를 발행했고</span>
                 <b>351,397 명</b>이 구독했어요!
             </p>
-            <div class="cta-arrow ">
-                <div class="line"></div>
-            </div>
+            <Arrow><Line/></Arrow>
            
         </FooterStatic>
         <MainFooter>
@@ -35,9 +33,9 @@ const Footer = () => {
                     <LinkButton>고슴책</LinkButton>
                     <LinkButton>2020 총선</LinkButton>
                 </FooterSitemapItem>
-                <FooterSitemapItem margin-right= "1rem" display="flex">
+                <FooterSitemapItem2>
                     <LinkButton>서비스이용약관</LinkButton><LinkButton><strong>개인정보처리방침</strong></LinkButton>
-                </FooterSitemapItem>
+                </FooterSitemapItem2>
             </FooterSitemap>    
             <FooterAddress>
                 <FooterAddressText>
@@ -71,6 +69,36 @@ const FooterStatic = styled.div`
         background: white;
         cursor: pointer;
     }`;
+    
+const Arrow = styled.div`
+max-width: 67px;
+flex-grow: 1;
+margin: 0 3px 0 11px;
+padding: 17px 0;
+`;
+const Line = styled.div`
+    width: 100%;
+    height: 2px;
+    background: #000;
+    position: relative;
+    display: block;
+    &::before, &::after {
+        background: inherit;
+        position: absolute;
+        width: 17px;
+        height: 2px;
+        content: '';
+        right: 0;
+    }
+    &::before {
+        transform: rotate(-50deg);
+        transform-origin: top right;
+    }
+    &::after {
+        transform: rotate(50deg);
+        transform-origin: bottom right;
+    }
+`;  
 
 const MainFooter= styled.div`
     display: flex;
@@ -83,14 +111,19 @@ const MainFooter= styled.div`
     box-sizing: border-box;
     position: relative;
     z-index: 4;
-    `;
+    @media (max-width: 1360px) {
+    padding-top: 3rem;
+    padding-bottom: 10rem;
+}`;
 
 const FooterAddress = styled.div`
     float: left;
     width: 50%;
+    
     @media (max-width: 1360px){
         float: none;
         width: 100%;
+
     }`;
 const FooterAddressLogo = styled.div`
     display: inline-block;
@@ -108,18 +141,37 @@ const FooterSitemap= styled.div`
     margin-bottom: 4em;
     position: relative;
     color: #161616;
-    align-items: center;}`;
+    align-items: center;
+    @media (max-width: 1360px) {
+    display: block;
+    float: none;
+    width: 100%;
+    position: relative;
+}`;
 
 const FooterSitemapItem= styled.div`
     width: 50%;
     @media (max-width: 1360px) {
     float: left;
-    width: 50%;}`;
-
+    width: 50%;
+}`;
+const FooterSitemapItem2= styled.div`
+    width: 50%;
+    @media (max-width: 1360px) {
+    float: none;
+    width: 100%;
+    display: -webkit-flex;
+    display: flex;
+    margin-top: 64px;
+    padding-top: 8px;
     
+}`;
+
+
 const LinkButton= styled.div`
     align-items: center;
     display: flex;
+    margin-right: 1rem;
     margin-bottom: .5rem;
     color: #161616;
     font: 12px
@@ -137,6 +189,9 @@ const FooterAddressText = styled.div`
     font-size: 1.0rem;
     color: #161616;
     display: block;
+    @media (max-width: 1080px) {
+    font-size: 12px;
+}
 `;
 Footer.defaultProps = {};
 
