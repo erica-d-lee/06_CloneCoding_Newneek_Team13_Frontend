@@ -8,13 +8,12 @@ const Footer = () => {
         <div>
         <FooterStatic>
             <p>
-                <span>오늘까지
-                    <b>487회</b>
-                    뉴스레터를 발행했고</span>
-                <b>351,397 명</b>이 구독했어요!
+                <span>
+                    오늘까지 <b>487회</b> 뉴스레터를 발행했고 
+                </span>
+                <b> 351,397명</b>이 구독했어요!
             </p>
             <Arrow><Line/></Arrow>
-           
         </FooterStatic>
         <MainFooter>
             <FooterAddress>
@@ -44,9 +43,7 @@ const Footer = () => {
                 <FooterAddressText>
                 <small>ⓒ NEWNEEK Co., Ltd. 2018-2020.</small>
                 </FooterAddressText>
-            </FooterAddress>
-      
-            
+            </FooterAddress>  
         </MainFooter>
 
         </div>
@@ -64,17 +61,31 @@ const FooterStatic = styled.div`
     font-size: 1.5rem;
     color: #161616;
     position: relative;
-    letter-spacing: -.0125rem;
-    &: hover {
-        background: white;
-        cursor: pointer;
-    }`;
+    cursor: pointer;
+    & > span {
+        display: inline;
+    }
+    & > p {
+        font-size: 1.5rem;
+    }
+    @media (max-width: 1360px) {
+        & > p {
+            font-size: 1.25rem;
+            line-height: 1.6;
+        };
+    };
+    @media (max-width: 1080px) {
+        & > span {
+            display: block;
+        }
+    }
+`;
     
 const Arrow = styled.div`
-max-width: 67px;
-flex-grow: 1;
-margin: 0 3px 0 11px;
-padding: 17px 0;
+    max-width: 67px;
+    flex-grow: 1;
+    margin: 0 3px 0 11px;
+    padding: 17px 0;
 `;
 const Line = styled.div`
     width: 100%;
@@ -112,8 +123,8 @@ const MainFooter= styled.div`
     position: relative;
     z-index: 4;
     @media (max-width: 1360px) {
-    padding-top: 3rem;
-    padding-bottom: 10rem;
+        padding-top: 3rem;
+        padding-bottom: 10rem;
 }`;
 
 const FooterAddress = styled.div`
@@ -130,9 +141,9 @@ const FooterAddressLogo = styled.div`
     max-width: 200px;
     margin: 0 0 16px;
     @media (max-width: 1360px) {
-    width: 120px;}
+        width: 120px;
+    }
 `;
- 
 const FooterSitemap= styled.div`
     line-height: 1.8;
     display: flex;
@@ -143,29 +154,29 @@ const FooterSitemap= styled.div`
     color: #161616;
     align-items: center;
     @media (max-width: 1360px) {
-    display: block;
-    float: none;
-    width: 100%;
-    position: relative;
+        display: block;
+        float: none;
+        width: 100%;
+        position: relative;
 }`;
 
 const FooterSitemapItem= styled.div`
     width: 50%;
     @media (max-width: 1360px) {
-    float: left;
-    width: 50%;
+        float: left;
+        width: 50%;
 }`;
 const FooterSitemapItem2= styled.div`
     width: 50%;
     @media (max-width: 1360px) {
-    float: none;
-    width: 100%;
-    display: -webkit-flex;
-    display: flex;
-    margin-top: 64px;
-    padding-top: 8px;
-    
-}`;
+        float: none;
+        width: 100%;
+        display: -webkit-flex;
+        display: flex;
+        margin-top: 64px;
+        padding-top: 8px;
+    }
+`;
 
 
 const LinkButton= styled.div`
@@ -174,14 +185,15 @@ const LinkButton= styled.div`
     margin-right: 1rem;
     margin-bottom: .5rem;
     color: #161616;
-    font: 12px
+    font: 12px;
     color: #161616;
     text-decoration:none;
     letter-spacing: -.0125rem;
-    &: hover {
+    &:hover {
         color: #fb7800;
         cursor: pointer;
-    }`;
+    }
+`;
 
 const FooterAddressText = styled.div`
     width: 100%;
@@ -190,9 +202,10 @@ const FooterAddressText = styled.div`
     color: #161616;
     display: block;
     @media (max-width: 1080px) {
-    font-size: 12px;
-}
+        font-size: 12px;
+    }
 `;
+
 Footer.defaultProps = {};
 
 export default Footer;

@@ -35,18 +35,21 @@ const ProgressBar = (props) => {
 
 const Progress = styled.div`
   width: 100%;
-  height: 100px;
-  background-color: black;
+  height: 50px;
+  background-color: #fff;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 10;
+  overflow: hidden;
+  transition: all .2s;
+  border-bottom: 1px solid #161616;
 `;
 
 const Level = styled.div`
   height: 100%;
-  background-color: yellow;
+  background-color: #fb7800;
 `;
 
 export default ProgressBar;
