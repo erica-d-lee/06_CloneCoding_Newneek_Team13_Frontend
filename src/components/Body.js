@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {CardList, Category} from './';
+import {CardList, Category, Economy} from './';
 import {Menu, Button} from '../elements';
 
 const Body = (props) => {
@@ -18,6 +18,7 @@ const Body = (props) => {
               <Button padding='10px 1.5rem 11px' margin='2rem auto' width='20rem'>더보기</Button>
             </div>
         </Div>
+        <Economy />
       </div>
     </React.Fragment>
   )

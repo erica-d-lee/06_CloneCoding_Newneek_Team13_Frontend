@@ -31,7 +31,6 @@ Menu.defaultProps = {
 
 const Span = styled.span`
   color: #161616;
-  cursor: pointer;
   font-size: ${(props) => props.large ? '2rem': '1.125rem'};
   letter-spacing: ${(props) => props.letterSpacing};
   font-weight: ${(props) => props.fontWeight};
