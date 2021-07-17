@@ -29,7 +29,8 @@ const IntroHead = () => {
                      <div margin= "0.5rem 0px 0px;"></div>
                      <CheckBox>
                      <CheckInput/>
-                     <SubscribeAgree/>개인정보 수집·이용에 동의합니다
+                     <SubscribeAgree type="checkbox" />
+                     <UnderLine>개인정보 수집·이용</UnderLine>에 동의합니다
                      </CheckBox>
                      <SubscribeBtn>
                      뉴스레터 무료로 구독하기
@@ -95,8 +96,6 @@ const IntroInner = styled.div`
     color: #161616;
     font-size: 3rem;
     letter-spacing: -.025rem;
-    -webkit-text-size-adjust: 100%;
-    -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     @media (max-width: 1080px){
         max-width: 480px;
@@ -161,7 +160,9 @@ const Subscribe= styled.form`
     position: relative;
     z-index: 1;
 `;
-
+const UnderLine = styled.text`
+    text-decoration:underline
+`;
 const TextFiled = styled.div`
 background: #ebebeb;
 letter-spacing: -.0125rem;
@@ -191,7 +192,8 @@ const CheckBox = styled.div`
     display: block;
     padding: .5rem 0;
     position: relative;
-    font-size: 12px;
+    font-size: 14px;
+    font-weight: 500;
     display:flex;
     `;
 const CheckInput = styled.input`
@@ -204,17 +206,14 @@ const CheckInput = styled.input`
 `;
 
 const SubscribeAgree = styled.input`
-content: "";
-display: block;
-width: 16px;
-height: 16px;
-border-radius: 0;
-border: 1px solid #161616;
-box-sizing: border-box;
-background: #fff;
-position: absolute;
-left: 0;
-top: 0;
+    background-color: white;
+    box-sizing: border-box;
+    margin: 3px 12px 3px 4px;
+    border: 1px solid #161616;
+    width: 16px;
+    height: 16px;
+   
+    
 `; 
 
 const SubscribeBtn = styled.button`
