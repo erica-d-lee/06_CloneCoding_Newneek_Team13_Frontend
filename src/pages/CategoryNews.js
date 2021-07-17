@@ -6,7 +6,7 @@ import {  Banner, Category, Economy, Footer, Header } from "../components/";
 const CategoryNews = () => {
     return (
     <React.Fragment>
-        카테고리뉴스입니다
+        카테고리뉴스입니다!!
     </React.Fragment>
     );
 };
