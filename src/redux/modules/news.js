@@ -17,9 +17,8 @@ const initialState = {
 const setNewsDB = () => {               // 메인페이지 뉴스 목록 불러오기
   return function(dispatch) {
     const axios = require('axios');
-    axios.get('url').then((response) => {
-      console.log(response.data);
-      dispatch(setNews(response.data));
+    axios.get('http://15.164.244.197/api/all').then((response) => {
+      dispatch(setNews(response.data.posts));
     }).catch((err) => {
       console.log(`메인 페이지 뉴스 불러오기 에러: ${err}`);
     });

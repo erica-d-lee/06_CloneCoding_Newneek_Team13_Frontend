@@ -14,7 +14,7 @@ const Main = (props) => {
     <React.Fragment>
         <Header/>
         <IntroHead/>
-        <Body {...news_list} />
+        <Body news_list={[...news_list]} />
         <Footer/>
         <BottomBar/>
     </React.Fragment>
