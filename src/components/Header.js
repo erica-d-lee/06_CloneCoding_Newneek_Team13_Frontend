@@ -43,6 +43,7 @@ const NavbarTop = styled.div `
     height: 30px;
     background: #fff;
     position: relative;
+ 
 `;
 const NavbarTopIn = styled.div `
     background: linear-gradient(-45deg,#ebebeb 11px,transparent 0),linear-gradient(45deg,#ebebeb 11px,transparent 0);
@@ -58,13 +59,28 @@ const NavbarTopIn = styled.div `
     height: 32px;
     z-index: 7;
     @media (max-width: 1080px){
-        background: linear-gradient(-45deg,#ebebeb 11px,transparent 0),linear-gradient(45deg,#ebebeb 11px,transparent 0);
-        background-size: 16px 16px;
-        background-repeat: repeat-x;
-        top: 14px;
-        left: 0;
-        height: 16px;
-        z-index: 7;
+        font-size: 12px;
+        &::before {
+            background: linear-gradient(-45deg,#ebebeb 11px,transparent 0),linear-gradient(45deg,#ebebeb 11px,transparent 0);
+            background-size: 16px 16px;
+            background-repeat: repeat-x;
+            top: 14px;
+            left: 0;
+            height: 16px;
+            z-index: 7;}
+        &::after {
+                background: linear-gradient(
+            -45deg
+            ,#ebebeb 11px,transparent 0),linear-gradient(
+            45deg
+            ,#ebebeb 11px,transparent 0);
+                background-size: 16px 16px;
+                background-repeat: repeat-x;
+                top: 14px;
+                left: 0;
+                height: 16px;
+                z-index: 7;
+            }
 }
 `;
 const Navbar = styled.div `

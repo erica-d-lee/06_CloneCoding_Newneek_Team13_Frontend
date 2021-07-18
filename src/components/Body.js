@@ -17,6 +17,7 @@ const Body = (props) => {
 
   return (
     <React.Fragment>
+      <div styled="margin-top: -1px;">
       <Category />
       <div style={{backgroundColor: '#ebebeb', marginTop: '-1px'}}>
         <Div style={{maxWidth: '1360px', padding: '0 5% 6rem 5%', position: 'relative', display: 'block', letterSpacing: '-.0125rem'}}>
@@ -32,6 +33,7 @@ const Body = (props) => {
             </div>
         </Div>
         <Economy />
+        </div>
       </div>
     </React.Fragment>
   )

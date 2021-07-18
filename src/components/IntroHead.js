@@ -7,40 +7,44 @@ const IntroHead = () => {
         <React.Fragment>
             <IntroHeadBar>
                 <SubscribeGosum>
-                <img src={gosumHome} alt="gosumHome" width="100%" verticalAlign= "middle"/>
+                    <img src={gosumHome} alt="gosumHome" width="100%" verticalAlign="middle"/>
                 </SubscribeGosum>
                 <IntroHeadTitle>
                     <IntroInner>
-                    특보! <span>🗞️</span> 우리가 시간이 없지, 
-                    <MobileBlock>세상이 안 궁금하냐!</MobileBlock>
+                        특보!
+                        <span>🗞️</span>
+                        우리가 시간이 없지,
+                        <MobileBlock>세상이 안 궁금하냐!</MobileBlock>
                     </IntroInner>
                 </IntroHeadTitle>
                 <IntroHeadDescription>
-                <IntroInner>
-                    <IntroHeadSubhead>✨지금 <b>351,445명</b>이 뉴닉을 읽고 있어요.</IntroHeadSubhead>
-                    <IntroHeadMainhead>세상 돌아가는 소식, 알고는 싶지만 신문 볼 새 없이 바쁜 게 우리 탓은 아니잖아요!  
-                    <DesktopBlock>월/수/금 아침마다 세상 돌아가는 소식을 메일로 받아보세요.</DesktopBlock>
-                    </IntroHeadMainhead>
-                    <Subscribe>
-                    <TextFiled>
-                    <SubInput type="text" name="email" placeholder="이메일 주소"/></TextFiled>
-                    <TextFiled>
-                    <SubInput type="text" name="name"  placeholder="닉네임" /> </TextFiled>
-                    <div margin= "0.5rem 0px 0px;"></div>
-                    <CheckBox>
-                    <CheckInput/>
-                    <SubscribeAgree type="checkbox" />
-                    <UnderLine>개인정보 수집·이용</UnderLine>에 동의합니다
-                    </CheckBox>
-                    <SubscribeBtn>
-                    뉴스레터 무료로 구독하기
-                    </SubscribeBtn>
-                    </Subscribe> 
-                </IntroInner>
+                    <IntroInner>
+                        <IntroHeadSubhead>✨지금
+                            <b>351,445명</b>이 뉴닉을 읽고 있어요.</IntroHeadSubhead>
+                        <IntroHeadMainhead>세상 돌아가는 소식, 알고는 싶지만 신문 볼 새 없이 바쁜 게 우리 탓은 아니잖아요!
+                            <DesktopBlock>월/수/금 아침마다 세상 돌아가는 소식을 메일로 받아보세요.</DesktopBlock>
+                        </IntroHeadMainhead>
+                        <Subscribe>
+                            <TextFiled>
+                                <SubInput type="text" name="email" placeholder="이메일 주소"/></TextFiled>
+                            <TextFiled>
+                                <SubInput type="text" name="name" placeholder="닉네임"/>
+                            </TextFiled>
+                            <div margin="0.5rem 0px 0px;"></div>
+                            <CheckBox>
+                                <CheckInput/>
+                                <SubscribeAgree type="checkbox"/>
+                                <UnderLine>개인정보 수집·이용</UnderLine>에 동의합니다
+                            </CheckBox>
+                            <SubscribeBtn>
+                                뉴스레터 무료로 구독하기
+                            </SubscribeBtn>
+                        </Subscribe>
+                    </IntroInner>
                 </IntroHeadDescription>
             </IntroHeadBar>
         </React.Fragment>
-        );
+    );
 };
 
 IntroHead.defaultProps = {};
@@ -50,6 +54,8 @@ const IntroHeadBar = styled.div `
 `;
 const SubscribeGosum = styled.div `
     position: absolute;
+    max-width: 480px;
+    display: block;
     top: 5rem;
     left: 50%;
     width: 100%;
@@ -63,11 +69,12 @@ const SubscribeGosum = styled.div `
         position: relative;
         z-index: 6; 
 }`;
-const IntroHeadTitle = styled.text`
+const IntroHeadTitle = styled.h1 `
     padding: 1rem 0;
     border-bottom: 1px solid #000;
     font-size: 3rem;
     letter-spacing: -.025rem;
+    margin:0px auto;
     @media (max-width: 1080px){
         background: #ebebeb;
         border-top: 1px solid #161616;
@@ -75,50 +82,32 @@ const IntroHeadTitle = styled.text`
         font-size: 2rem;
         text-align: center;
         position: relative;
-        z-index: 6;
-        margin-block-start: 0.67em;
-        margin-block-end: 0.67em;
-        margin-inline-start: 0px;
-        margin-inline-end: 0px;
-        display: block;
-}
+        z-index: 6;       
 `;
-const IntroInner = styled.div`
+const IntroInner = styled.div `
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 5%;
     box-sizing: border-box;
     display: block;
-    font-weight: 700;
-    color: #161616;
-    font-size: 3rem;
-    letter-spacing: -.025rem;
-    text-rendering: optimizeLegibility;
-    @media (max-width: 1080px){
-        max-width: 480px;
-        margin: 0 auto;
-        font-size: 2rem;
-        text-align: center;
-        line-height: 1.4;
-        word-break: keep-all;
-    }
+    @media (max-width: 1080px) {
+    max-width: 480px;}
 `;
-const MobileBlock= styled.div`
+const MobileBlock = styled.div `
     display: inline;
-    font-size: 3rem;
-    letter-spacing: -.025rem;
     @media (max-width: 1080px){
         display: block;
-        font-size: 2rem;
-        text-align: center;
     }
 `;
-const IntroHeadDescription = styled.div`
+const IntroHeadDescription = styled.div `
     padding: 2rem 0 3rem;
     background: #fb7800;
     box-sizing: border-box;
+    @media (max-width: 1080px){
+    position: relative;
+    z-index: 7;}
 `;
-const IntroHeadSubhead = styled.text`
+const IntroHeadSubhead = styled.p `
     max-width: 560px;
     font-size: 1.125rem;
     margin-block-start: 1em;
@@ -129,46 +118,38 @@ const IntroHeadSubhead = styled.text`
     z-index: 1;
     display: block;
 `;
-const IntroHeadMainhead = styled.text`
+const IntroHeadMainhead = styled.p `
     margin-top: 1rem;   
     display: block;
     max-width: 560px;
     font-size: 1.125rem;
     letter-spacing: -.0125rem;
-    font: 14px/1.8 "Noto Sans KR","Apple SD Gothic Neo",sans-serif;
 `;
 
-
-const DesktopBlock= styled.text`
+const DesktopBlock = styled.span `
     display: block;
     @media (max-width: 1080px) {
     display: inline;
     }
 `;
 
-const Subscribe= styled.form`
+const Subscribe = styled.form `
     max-width: 400px;
     margin: 1.5rem 0 0;
     box-sizing: border-box;
     position: relative;
     z-index: 1;
 `;
-const UnderLine = styled.text`
+const UnderLine = styled.text `
     text-decoration:underline;
 `;
 
-const TextFiled = styled.div`
-    background: #ebebeb;
-    letter-spacing: -.0125rem;
+const TextFiled = styled.div `
     margin: 0;
-    position: relative;
-    font: 14px;
-    @media (max-width: 1080px) {
-        font-size: 12px;
-    };
-`;
+    position: relative;`;
 
-const SubInput = styled.input`
+const SubInput = styled.input `
+    background: #fff;
     margin-top: .5rem;
     display: block;
     width: 100%;
@@ -180,9 +161,9 @@ const SubInput = styled.input`
     outline: none;
     box-shadow: none;
     height: 48px;
-` ;
+    `;
 
-const CheckBox = styled.div`
+const CheckBox = styled.div `
     display: block;
     padding: .5rem 0;
     position: relative;
@@ -190,7 +171,7 @@ const CheckBox = styled.div`
     font-weight: 500;
     display:flex;
 `;
-const CheckInput = styled.input`
+const CheckInput = styled.input `
     width: 0;
     height: 0;
     opacity: 0;
@@ -199,16 +180,16 @@ const CheckInput = styled.input`
     outline: auto;
 `;
 
-const SubscribeAgree = styled.input`
+const SubscribeAgree = styled.input `
     background-color: white;
     box-sizing: border-box;
     margin: 3px 12px 3px 4px;
     border: 1px solid #161616;
     width: 16px;
     height: 16px;    
-`; 
+`;
 
-const SubscribeBtn = styled.button`
+const SubscribeBtn = styled.button `
     background: #161616;
     border: 1px solid #161616;
     color: #fff;
