@@ -32,6 +32,7 @@ const Bottombar = styled.div`
     z-index: 7;
     @media (max-width: 900px){
         display: flex ;
+        
     }
 `;
 const A = styled.a`
