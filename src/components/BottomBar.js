@@ -30,9 +30,8 @@ const Bottombar = styled.div`
     right: 0;
     bottom: 0;
     z-index: 7;
-    @media (max-width: 900px){
+    @media (max-width: 1080px){
         display: flex ;
-        
     }
 `;
 const A = styled.a`
