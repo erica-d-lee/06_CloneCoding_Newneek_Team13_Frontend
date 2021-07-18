@@ -24,8 +24,8 @@ const Body = (props) => {
           '' : <div style={{padding: '4rem 0 2rem 0'}}>
           <Menu emoji='🧨' name=' 제목' large fontWeight='400' lineHeight='1.4' wordBreak='keep-all'/>
         </div>
-           }
-           { main ? 
+          }
+          { main ? 
             <CardList style={{margin: '-5px 0px 0px 0px'}} {...news_list}></CardList> : <CardList {...news_list}></CardList>}
             <div style={{width: '100%', display: 'block'}}>
               <Button padding='10px 1.5rem 11px' margin='2rem auto' width='20rem'>더보기</Button>

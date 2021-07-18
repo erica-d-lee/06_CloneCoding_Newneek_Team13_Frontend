@@ -1,7 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { BrowserRouter } from "react-router-dom";
-import {  Banner, Category, Economy, Footer, Header } from "../components/";
 import {history} from "../redux/configureStore";
 
 const Search = () => {
@@ -118,7 +116,6 @@ const TextFildInput=styled.input`
     box-shadow: none;
     cursor: text;
     margin: 0em;
-    }
 `;
 const SearchResult=styled.div`
     display: block;

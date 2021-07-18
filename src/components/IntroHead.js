@@ -22,19 +22,19 @@ const IntroHead = () => {
                     <DesktopBlock>월/수/금 아침마다 세상 돌아가는 소식을 메일로 받아보세요.</DesktopBlock>
                     </IntroHeadMainhead>
                     <Subscribe>
-                     <TextFiled>
-                     <SubInput type="text" name="email" placeholder="이메일 주소"/></TextFiled>
-                     <TextFiled>
-                     <SubInput type="text" name="name"  placeholder="닉네임" /> </TextFiled>
-                     <div margin= "0.5rem 0px 0px;"></div>
-                     <CheckBox>
-                     <CheckInput/>
-                     <SubscribeAgree type="checkbox" />
-                     <UnderLine>개인정보 수집·이용</UnderLine>에 동의합니다
-                     </CheckBox>
-                     <SubscribeBtn>
-                     뉴스레터 무료로 구독하기
-                     </SubscribeBtn>
+                    <TextFiled>
+                    <SubInput type="text" name="email" placeholder="이메일 주소"/></TextFiled>
+                    <TextFiled>
+                    <SubInput type="text" name="name"  placeholder="닉네임" /> </TextFiled>
+                    <div margin= "0.5rem 0px 0px;"></div>
+                    <CheckBox>
+                    <CheckInput/>
+                    <SubscribeAgree type="checkbox" />
+                    <UnderLine>개인정보 수집·이용</UnderLine>에 동의합니다
+                    </CheckBox>
+                    <SubscribeBtn>
+                    뉴스레터 무료로 구독하기
+                    </SubscribeBtn>
                     </Subscribe> 
                 </IntroInner>
                 </IntroHeadDescription>
@@ -68,7 +68,6 @@ const IntroHeadTitle = styled.text`
     border-bottom: 1px solid #000;
     font-size: 3rem;
     letter-spacing: -.025rem;
-    }
     @media (max-width: 1080px){
         background: #ebebeb;
         border-top: 1px solid #161616;
@@ -103,7 +102,6 @@ const IntroInner = styled.div`
         line-height: 1.4;
         word-break: keep-all;
     }
-    }
 `;
 const MobileBlock= styled.div`
     display: inline;
@@ -119,7 +117,6 @@ const IntroHeadDescription = styled.div`
     padding: 2rem 0 3rem;
     background: #fb7800;
     box-sizing: border-box;
-
 `;
 const IntroHeadSubhead = styled.text`
     max-width: 560px;
@@ -131,8 +128,6 @@ const IntroHeadSubhead = styled.text`
     position: relative;
     z-index: 1;
     display: block;
-    
-}
 `;
 const IntroHeadMainhead = styled.text`
     margin-top: 1rem;   
@@ -141,7 +136,6 @@ const IntroHeadMainhead = styled.text`
     font-size: 1.125rem;
     letter-spacing: -.0125rem;
     font: 14px/1.8 "Noto Sans KR","Apple SD Gothic Neo",sans-serif;
-}
 `;
 
 
@@ -149,6 +143,7 @@ const DesktopBlock= styled.text`
     display: block;
     @media (max-width: 1080px) {
     display: inline;
+    }
 `;
 
 const Subscribe= styled.form`
@@ -159,17 +154,18 @@ const Subscribe= styled.form`
     z-index: 1;
 `;
 const UnderLine = styled.text`
-    text-decoration:underline
+    text-decoration:underline;
 `;
+
 const TextFiled = styled.div`
-background: #ebebeb;
-letter-spacing: -.0125rem;
-margin: 0;
-position: relative;
-font: 14px
-@media (max-width: 1080px){
-    font-size: 12px;
-}
+    background: #ebebeb;
+    letter-spacing: -.0125rem;
+    margin: 0;
+    position: relative;
+    font: 14px;
+    @media (max-width: 1080px) {
+        font-size: 12px;
+    };
 `;
 
 const SubInput = styled.input`
@@ -193,7 +189,7 @@ const CheckBox = styled.div`
     font-size: 14px;
     font-weight: 500;
     display:flex;
-    `;
+`;
 const CheckInput = styled.input`
     width: 0;
     height: 0;
@@ -209,9 +205,7 @@ const SubscribeAgree = styled.input`
     margin: 3px 12px 3px 4px;
     border: 1px solid #161616;
     width: 16px;
-    height: 16px;
-   
-    
+    height: 16px;    
 `; 
 
 const SubscribeBtn = styled.button`

@@ -11,7 +11,6 @@ const BottomBar = () => {
        <A href="/" class=""><Span
        role="img" aria-label="" class="emoji">🌹</Span><Span2>여성의 날</Span2></A>
        <A class="" href="/"><Span role="img" aria-label="" class="emoji">🙍</Span><Span2>마이페이지</Span2></A>
-       
        </Bottombar>
     </React.Fragment>
     );
@@ -31,19 +30,18 @@ const Bottombar = styled.div`
     right: 0;
     bottom: 0;
     z-index: 7;
-    @media (max-width: 1080px){
-        display: ;
+    @media (max-width: 900px){
+        display: flex ;
     }
-
 `;
 const A = styled.a`
-display: block;
-width: 100%;
-box-sizing: border-box;
-text-align: center;
-text-decoration: none;
-color: #666;
-`;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+    color: #666;
+    `;
 
 const Span = styled.span`
     display: flex;
@@ -59,10 +57,10 @@ const Span = styled.span`
     font-size: 1.25rem;
 `;
 const Span2 = styled.span`
-display: block;
-margin-top: -.25rem;
-font-size: 11px;
-transition: all .4s ease;
+    display: block;
+    margin-top: -.25rem;
+    font-size: 11px;
+    transition: all .4s ease;
 `;
 
 export default BottomBar ;

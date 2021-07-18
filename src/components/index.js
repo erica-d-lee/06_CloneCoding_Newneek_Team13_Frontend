@@ -7,7 +7,8 @@ import Body from './Body';
 import IntroHead from './IntroHead';
 import DetailContent from './DetailContent';
 import ProgressBar from './ProgressBar';
+import BottomBar from './BottomBar'
 
 
 
-export {Category, Economy, Footer, Header, CardList, Body, IntroHead, DetailContent, ProgressBar };
+export {Category, Economy, Footer, Header, CardList, Body, IntroHead, DetailContent, ProgressBar,BottomBar };

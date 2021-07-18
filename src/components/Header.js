@@ -33,7 +33,6 @@ const Header = () => {
                     </SearchButton>
                 </NavbarInner>
             </Navbar>
-
         </React.Fragment>
     );
 };
@@ -157,7 +156,7 @@ const SearchButton = styled.button `
     background: none;
     cursor: pointer;
     position: relative;
-    @media (max-width: 1080px){
+    @media (max-width: 1080px) {
     width: 40px;
     height: 40px;
     display: none;
