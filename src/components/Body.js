@@ -26,7 +26,7 @@ const Body = (props) => {
         </div>
           }
           { main ? 
-            <CardList style={{margin: '-5px 0px 0px 0px'}} {...news_list}></CardList> : <CardList {...news_list}></CardList>}
+            <CardList style={{margin: '-5px 0px 0px 0px'}} news_list={[...news_list]}></CardList> : <CardList news_list={[...news_list]}></CardList>}
             <div style={{width: '100%', display: 'block'}}>
               <Button padding='10px 1.5rem 11px' margin='2rem auto' width='20rem'>더보기</Button>
             </div>

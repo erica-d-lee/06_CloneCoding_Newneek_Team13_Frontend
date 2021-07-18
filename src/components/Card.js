@@ -11,23 +11,27 @@ const Card = (props) => {
   if (thumbnail) {
     return (                          // 썸네일 있을 때
       <CardBox onClick={_onClick}>
-        <a href style={{boxSizing: 'border-box', position: 'relative', display: 'block', borderStyle: 'solid', borderColor: '#161616', borderWidth: '0 1px 1px 0', borderCollapse: 'collapse', cursor: 'pointer', height: 'auto', overflow: 'hidden'}}>
-          <div>
-            <img src={thumbnail} style={{width: 'auto', height: 'auto', overflow: 'hidden', boxSizing: 'border-box', position: 'relative', verticalAlign: 'middle'}} alt=''></img>
+        <div style={{width: '100%', height: '100%', position: 'relative'}}>
+        <a href style={{boxSizing: 'border-box', position: 'relative', display: 'block', borderStyle: 'solid', borderColor: '#161616', borderWidth: '0 1px 1px 0', borderCollapse: 'collapse', height: 'auto', overflow: 'hidden'}}>
+          <div style={{width: '100%', height: '100%', position: 'absolute'}}>
+            <CardBody>
+            <img src={thumbnail} style={{width: '100%', height: 'auto', overflow: 'hidden', boxSizing: 'border-box', position: 'relative', verticalAlign: 'middle'}} alt=''></img>
             <div style={{padding: '1.5rem 1.75rem', display: 'block'}}>
               <Text mainTitle value={title} margin='0 0 0.5rem 0' fontWeight='700' lineHeight='1.4' wordBreak='keep-all' mbs='1em' mbe='1em'/>
               <Text span value={date} padding='0' margin='0 1em 0 0'/>
               <Text span value={category} />
             </div>
+            </CardBody>
           </div>
         </a>
+        </div>
       </CardBox>
     )
   } else {
     return (                          // 썸네일 없을 때
       <CardBox onClick={_onClick}>
         <a href style={{boxSizing: 'border-box', position: 'relative', display: 'block', borderStyle: 'solid', borderColor: '#161616', borderWidth: '0 1px 1px 0', borderCollapse: 'collapse', cursor: 'pointer', width: 'auto', height: 'auto', overflow: 'hidden'}}>
-          <div style={{width: '100%', height: '100%', position: 'absolute'}}>
+          <div>
             <div style={{padding: '1.5rem 1.75rem', display: 'block', boxSizing: 'border-box'}}>
               <Text span value={emoji} display='block' margin='-1rem 0 0 0' fontSize='3rem'/>
               <Text mainTitle value={title} margin='0.5rem 0 1rem 0' fontWeight='700' lineHeight='1.4' wordBreak='keep-all'/>
@@ -70,6 +74,14 @@ const CardBox = styled.div`
     background-color: #fff;
     filter: grayscale(0%);
   }
+  cursor: pointer;
+  position: relative;
+`;
+
+const CardBody = styled.div`
+  padding: 1.5rem 1.75rem;
+  box-sizing: border-box;
+  display: block;
 `;
 
 export default Card;
