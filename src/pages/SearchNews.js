@@ -1,31 +1,32 @@
 import React from "react";
 import styled from "styled-components";
-import { BrowserRouter } from "react-router-dom";
-import { Footer, Header, CardList, Body} from "../components/";
-import { Menu } from '../elements';
+import {BrowserRouter} from "react-router-dom";
+import {Footer, Header, CardList, Body} from "../components/";
+import {Menu} from '../elements';
 
 const SearchNews = (props) => {
     return (
-    <React.Fragment>
-        <Header />
-        <SNMain>
-        <h1><Text> 플랫폼</Text>의 검색 결과에요.</h1>
-        <Status>🦔고슴이: ()개 찾았슴!</Status>
-        <Sorting>
-        <STBtn>최신순</STBtn>
-        <STBtn2>관련순</STBtn2>
-        </Sorting>
-        <CardList/>
-        </SNMain>
-        <Footer/>
-    </React.Fragment>
+        <React.Fragment>
+            <Header/>
+            <SNMain>
+                <h1>
+                    <Text>
+                        플랫폼</Text>의 검색 결과에요.</h1>
+                <Status>🦔고슴이: ()개 찾았슴!</Status>
+                <Sorting>
+                    <STBtn>최신순</STBtn>
+                    <STBtn2>관련순</STBtn2>
+                </Sorting>
+                <CardList/>
+            </SNMain>
+            <Footer/>
+        </React.Fragment>
     );
 };
 
-SearchNews.defaultProps = {    
-};
+SearchNews.defaultProps = {};
 
-const SNMain =styled.section`
+const SNMain = styled.section `
     margin-bottom: 6rem;
     width: 90%;
     max-width: 1360px;
@@ -38,16 +39,16 @@ const SNMain =styled.section`
 }
 `;
 
-const PostsHead = styled.header`
+const PostsHead = styled.header `
 margin: 4rem 0 2rem;
 `;
 
-const Text = styled.text`
+const Text = styled.text `
     color: rgb(153, 153, 153);
     font-size: 2rem;
     font-weight: 500;
 `;
-const Status = styled.span`
+const Status = styled.span `
     display: block;
     margin: .5rem 0 0;
     font-size: 1.25rem;
@@ -55,12 +56,12 @@ const Status = styled.span`
 
 `;
 
-const Sorting = styled.div`
+const Sorting = styled.div `
     margin: 2rem 0 1rem;
     display: block;
 `;
 
-const STBtn = styled.button`
+const STBtn = styled.button `
     width: 80px;
     border: 1px solid #161616;
     padding: .25rem 0;
@@ -73,7 +74,7 @@ const STBtn = styled.button`
     align-items: flex-start;
 `;
 
-const STBtn2 = styled.button`    
+const STBtn2 = styled.button `    
     width: 80px;
     padding: 30px auto;
     border: 1px solid #161616;
@@ -89,6 +90,5 @@ const STBtn2 = styled.button`
     position: relative;
    
 `;
-
 
 export default SearchNews;

@@ -20,7 +20,7 @@ const BottomBar = () => {
 BottomBar.defaultProps = {};
 
 const Bottombar = styled.div`
-    display: flex;
+    display: none;
     justify-content: space-around;
     width: 100%;
     padding: .25rem 0 calc(env(safe-area-inset-bottom) + .25rem);
@@ -32,8 +32,9 @@ const Bottombar = styled.div`
     bottom: 0;
     z-index: 7;
     @media (max-width: 1080px){
-        display: flex;
+        display: ;
     }
+
 `;
 const A = styled.a`
 display: block;
