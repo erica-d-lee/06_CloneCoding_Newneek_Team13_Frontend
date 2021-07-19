@@ -22,7 +22,7 @@ const Header = () => {
                         </NavbarMenuItem>
                     </NavbarMenu>
                     <NavberLogo onClick={() => {
-                            history.push("/")}}>
+                            history.push('/'); window.location.reload();}}>
                         <img src={NEWNEEKlogo} alt="logo" style={{width: "100%"}}/>
                     </NavberLogo>
                     <SearchButton

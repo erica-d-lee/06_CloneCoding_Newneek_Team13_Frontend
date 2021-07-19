@@ -71,8 +71,12 @@ const CardBox = styled.a`
   position: relative;
   display: block;
   color: #161616;
-  border: 1px solid #161616;
-  border-width: 0 1px 1px 0;
+  box-shadow:
+    1px 0 0 0 #161616,
+    0 1px 0 0 #161616,
+    1px 1px 0 0 #161616,
+    1px 0 0 0 #161616 inset,
+    0 1px 0 0 #161616 inset;
   cursor: pointer;
   text-decoration: none;
   -webkit-filter: grayscale(100%);

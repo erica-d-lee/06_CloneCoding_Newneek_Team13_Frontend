@@ -19,7 +19,7 @@ const Menu = (props) => {
 };
 
 Menu.defaultProps = {
-  emoji: '🧨',
+  emoji: null,
   name: 'name',
   letterSpacing: null,
   large: false,

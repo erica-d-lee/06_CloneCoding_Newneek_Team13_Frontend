@@ -7,9 +7,10 @@ import { actionCreators as newsActions } from '../redux/modules/news';
 
 const CardList = (props) => {
   const dispatch = useDispatch();
-  const [end, setEnd] = useState(12);      
+  const {category} = props;
+  const [end, setEnd] = useState(12);    // 마지막 뉴스 번호를 12로 초기화
   const all_news = useSelector(state => state.news.list);
-  const allnews_list = all_news.slice(0, all_news.length).sort(function(a, b) {                                   
+  const allnews_list = all_news.slice(0, all_news.length).sort(function(a, b) {                                   // 날짜 기준 내림차순 정렬
     const dateA = a.date;                 
     const dateB = b.date;
     if (dateA < dateB) return 1;
@@ -17,17 +18,23 @@ const CardList = (props) => {
     if (dateA === dateB) return 0;
   });
 
-  useEffect(() => {                     
-    dispatch(newsActions.setNewsDB());
-  }, []);
-
-  const news_list = allnews_list.slice(0, end); 
-  const loadMoreNews = () => {
-    if (end >= allnews_list.length) {
-      window.alert('마지막 목록입니다!');
-      return;
+  useEffect(() => {
+    if (category) {                    // 카테고리가 있으면(메인이 아니면),
+      const word = category.split(' ')[1];
+      // console.log(word);
+      dispatch(newsActions.setCategoryNewsDB(word)); // 카테고리별 불러오기
+    } else {                          // 카테고리가 없으면(메인이면),
+      dispatch(newsActions.setNewsDB()); // 전체 목록 불러오기
     }
-    setEnd(end + 12);
+  }, [category]);
+
+  const news_list = allnews_list.slice(0, end); // 목록을 12개까지 자름
+  const loadMoreNews = () => {            // 더보기 버튼 누르면 이 함수 콜
+    if (end >= allnews_list.length) {     // 더 이상 불러올 목록이 없으면,
+      window.alert('마지막 목록입니다!'); // 경고창 띄우고
+      return;                             // 리턴
+    }                                     // 불러올 다음 목록이 있으면,
+    setEnd(end + 12);                     // 마지막 뉴스 번호에 12를 더함
   }
 
   return(
@@ -48,9 +55,6 @@ const Posts = styled.div`
   display: flex;
   flex-wrap: wrap;
   position: relative;
-  border-color: #161616;
-  border-style: solid;
-  border-width: 1px 0 0 1px;
 `;
 
 const PostsPagination = styled.footer`

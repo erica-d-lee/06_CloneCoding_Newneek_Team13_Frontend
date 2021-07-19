@@ -6,15 +6,15 @@ import NEWNEEKlogo from "../shared/NEWNEEKlogo.png";
 const Footer = () => {
     return (
         <div>
-         <FooterStatic>
+        <FooterStatic>
             <p>  퀴어 프렌들리한 팀을 위한 
-                <MobileBlock>뉴닉 레인보우 가이드<span role="img" aria-label="">🏳️‍🌈</span></MobileBlock>
+                <MobileBlock> 뉴닉 레인보우 가이드<span role="img" aria-label="">🏳️‍🌈</span></MobileBlock>
             </p>
             <Arrow><Line/></Arrow>
         </FooterStatic>
         <FooterStatic>
             <p>3월 8일에 업데이트된
-                <MobileBlock>뉴닉의 여성용어 가이드<span role="img" aria-label="">🍞🌹</span> </MobileBlock>
+                <MobileBlock> 뉴닉의 여성용어 가이드<span role="img" aria-label="">🍞🌹</span> </MobileBlock>
             </p>
             <Arrow><Line/></Arrow>
         </FooterStatic>
@@ -95,10 +95,9 @@ const FooterStatic = styled.div`
         cursor: pointer;
     }
 `;
-   
+
 const MobileBlock = styled.span`
-    @media (max-width: 1080px)
-    .mobile-block {
+    @media (max-width: 1080px) {
         display: block;
     }
 `;
