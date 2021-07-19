@@ -83,6 +83,7 @@ const IntroHeadTitle = styled.h1 `
         text-align: center;
         position: relative;
         z-index: 6;       
+    }
 `;
 const IntroInner = styled.div `
     max-width: 1200px;
