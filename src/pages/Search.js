@@ -4,36 +4,42 @@ import {history} from "../redux/configureStore";
 
 const Search = () => {
     return (
-    <React.Fragment>
-        <div>
-            <SearchForm>
-                <TextFiled>
-                    <SearchClose onClick={() => {
-                            history.push("/");
-                        }}>
-                        <IconArrow/>
-                    </SearchClose>
-                    <TextFildInput  type="search" id="help-search" placeholder="고슴아 이게 궁금해. (인물, 이슈)" name="search"/>
-                </TextFiled>
-                <SearchResult>
-                    <SearchOption>
-                        <SearchTitle>고슴이 추천 키워드 </SearchTitle>
-                        <SearchItem>설문조사</SearchItem>
-                        <SearchItem>델타변이</SearchItem>
-                        <SearchItem>G7</SearchItem>
-                        <SearchItem>택배</SearchItem>
-                        <SearchItem>플랫폼</SearchItem>
-                    </SearchOption>
-                </SearchResult>
-            </SearchForm>
-        </div>
-    </React.Fragment>
+        <React.Fragment>
+            <div>
+                <SearchForm>
+                    <TextFiled>
+                        <SearchClose
+                            onClick={() => {
+                                history.push("/");
+                            }}>
+                            <IconArrow/>
+                        </SearchClose>
+                        <TextFildInput
+                            type="search"
+                            id="help-search"
+                            placeholder="고슴아 이게 궁금해. (인물, 이슈)"
+                            name="search"/>
+                    </TextFiled>
+                    <SearchResult>
+                        <SearchOption>
+                            <SearchTitle>고슴이 추천 키워드
+                            </SearchTitle>
+                            <SearchItem>설문조사</SearchItem>
+                            <SearchItem>델타변이</SearchItem>
+                            <SearchItem>G7</SearchItem>
+                            <SearchItem>택배</SearchItem>
+                            <SearchItem>플랫폼</SearchItem>
+                        </SearchOption>
+                    </SearchResult>
+                </SearchForm>
+            </div>
+        </React.Fragment>
     );
 };
 
 Search.defaultProps = {};
 
-const SearchForm=styled.form`
+const SearchForm = styled.form `
     background: #ebebeb;
     max-width: 640px;
     margin: 0 auto;
@@ -47,7 +53,7 @@ const SearchForm=styled.form`
     z-index: 6;
 `;
 
-const TextFiled=styled.fieldset`
+const TextFiled = styled.fieldset `
     border: 0;
     margin: 0px auto;
     position: relative;
@@ -59,7 +65,7 @@ const TextFiled=styled.fieldset`
     padding-block-end: 0.625em;
     min-inline-size: min-content;
 `;
-const SearchClose=styled.button`  
+const SearchClose = styled.button `  
     box-sizing: border-box;
     width: 52px;
     height: 52px;    
@@ -73,7 +79,7 @@ const SearchClose=styled.button`
     cursor: pointer;
 `;
 
-const IconArrow = styled.i`
+const IconArrow = styled.i `
     height: 52px;
     font-size: 1.5rem;
     position: relative;
@@ -101,7 +107,7 @@ const IconArrow = styled.i`
         -webkit-transform: translateY(-50%);
         transform: translateY(-50%)};      
 `;
-const TextFildInput=styled.input`
+const TextFildInput = styled.input `
     font-weight:bolder;
     height: 52px;
     font-size: 1.125rem;
@@ -117,17 +123,17 @@ const TextFildInput=styled.input`
     cursor: text;
     margin: 0em;
 `;
-const SearchResult=styled.div`
+const SearchResult = styled.div `
     display: block;
     letter-spacing: -.0125rem;
 `;
-const SearchOption=styled.div`
+const SearchOption = styled.div `
 padding: 2rem 0px 3rem;
 display: block;
 
 
 `;
-const SearchTitle=styled.div`
+const SearchTitle = styled.div `
 margin: 1rem 0px;
 font-size: 1.25rem;
 font-weight: 700;
@@ -141,7 +147,7 @@ font-weight: 700;
 
 `;
 
-const SearchItem=styled.div`
+const SearchItem = styled.div `
     display: block;
     padding: 0.5rem 0px;
     color: rgb(22, 22, 22);
@@ -149,5 +155,4 @@ const SearchItem=styled.div`
     cursor: pointer;
 `;
 
-
-export default Search  ;
+export default Search;
