@@ -18,7 +18,7 @@ const CardList = (props) => {
     if (dateA === dateB) return 0;
   });
 
-  useEffect(() => {
+  useEffect(() => {                    // 카테고리가 바뀔 때마다
     if (category) {                    // 카테고리가 있으면(메인이 아니면),
       const word = category.split(' ')[1];
       // console.log(word);
@@ -29,7 +29,7 @@ const CardList = (props) => {
   }, [category]);
 
   const news_list = allnews_list.slice(0, end); // 목록을 12개까지 자름
-  const loadMoreNews = () => {            // 더보기 버튼 누르면 이 함수 콜
+  const loadMoreNews = () => {            // 더보기 버튼 누르면 이 함수 호출
     if (end >= allnews_list.length) {     // 더 이상 불러올 목록이 없으면,
       window.alert('마지막 목록입니다!'); // 경고창 띄우고
       return;                             // 리턴

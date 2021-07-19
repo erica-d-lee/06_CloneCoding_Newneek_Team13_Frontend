@@ -1,6 +1,5 @@
 import { createAction, handleActions } from "redux-actions";
 import {produce} from 'immer';
-import {history} from '../configureStore';
 
 // 액션타입
 const SET_NEWS = 'SET_NEWS';
@@ -40,7 +39,7 @@ const setOneNewsDB = (postId) => {        // 상세페이지 개별 뉴스 불�
   };
 };
 
-const setCategoryNewsDB = (category) => {
+const setCategoryNewsDB = (category) => {  // 카테고리별 뉴스 목록 불러오기
   return function(dispatch) {
     const axios = require('axios');
     axios.get(`http://15.164.244.197/api/main?category=${category}`).then((response) => {

@@ -14,7 +14,7 @@ const IntroHead = () => {
                         특보!
                         <span>🗞️</span>
                         우리가 시간이 없지,
-                        <MobileBlock>세상이 안 궁금하냐!</MobileBlock>
+                        <MobileBlock> 세상이 안 궁금하냐!</MobileBlock>
                     </IntroInner>
                 </IntroHeadTitle>
                 <IntroHeadDescription>
