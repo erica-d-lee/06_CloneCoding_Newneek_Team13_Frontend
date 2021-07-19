@@ -51,8 +51,8 @@ Text.defaultProps = {
   mbs: null,          // margin-block-start
   mbe: null,          // margin-block-end
   mis: null,          // margin-inline-start
-  mie: null,
-  zIndex: null,          // margin-inline-end
+  mie: null,          // margin-inline-end
+  zIndex: null,          
 };
 
 const S = styled.span`

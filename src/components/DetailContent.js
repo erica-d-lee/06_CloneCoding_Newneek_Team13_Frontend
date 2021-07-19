@@ -1,17 +1,31 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styled from 'styled-components';
 import {Economy, ProgressBar} from './';
 import {Menu, Button} from '../elements';
+import { actionCreators as newsActions } from '../redux/modules/news';
+import { useDispatch, useSelector } from 'react-redux';
 
-const DetailContent = (props) => {
-    const {
-        category,
-        title,
-        date,
-        keyword,
-        plainContent,
-        hashtag
-    } = props;
+const DetailContent = () => {
+  const dispatch = useDispatch();
+  const postId = window.location.pathname.split('/detailnews/')[1];
+  const news_list = useSelector((state) => state.news.list);
+  const news = news_list.find((news_item) => news_item.postId == postId);
+  
+  
+  useEffect(() => {
+      if (news) {
+          return;
+      }
+      dispatch(newsActions.setOneNewsDB(postId));
+  },[]);
+
+  if (!news){
+    return (
+      <div>로딩중</div>
+    )
+  } console.log(news.htmlContent)
+  
+    // const content = "{news.htmlContent}"
     const {scrollTop} = document.documentElement;
     return (
         <React.Fragment>
@@ -29,20 +43,20 @@ const DetailContent = (props) => {
                         letterSpacing: '-.0125rem'
                     }}>
                     <PostHead>
-                        <RunningHead>{category}</RunningHead>
-                        <Headline>{title}</Headline>
-                        <HeadDate>{date}</HeadDate>
+                        <RunningHead>{news.category}</RunningHead>
+                        <Headline>{news.title}</Headline>
+                        <HeadDate>{news.date}</HeadDate>
                         <ProgressBar/>
                     </PostHead>
                     <PostBody>
-                        <div
+                        <div 
                             className='Room for Data'
                             style={{
                                 padding: '0 0 3rem'
-                            }}>{plainContent}</div>
+                            }}> {news.htmlContent}</div>;
                     </PostBody>
                     <HashTag>
-                        <HashItem>{hashtag}</HashItem>
+                        <HashItem>{news.hashtag}</HashItem>
                     </HashTag>
                 </Div>
                 <Economy/>
@@ -52,12 +66,7 @@ const DetailContent = (props) => {
 };
 
 DetailContent.defaultProps = {
-    category: '카테고리',
-    title: '제목',
-    date: '2021/07/17',
-    keyword: '#키워드',
-    content: '내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입' +
-            '니다내용입니다내용입니다내용입니다내용입니다내용입니다'
+   
 }
 
 const Div = styled.div `

@@ -6,8 +6,8 @@ import {Text} from '../elements';
 const Economy = () => {
     return (
         <React.Fragment>
-            <HomeEconomy className='HomeEconomy'>
-                <Figure className='Figure'>
+            <HomeEconomy>
+                <Figure>
                     <img src={gosum} style={{verticalAlign: 'middle', width: '100%', border: '0px'}} alt=''></img>
                 </Figure>
                 <Mangrove>
@@ -30,12 +30,11 @@ const HomeEconomy = styled.a`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin: 0;
+    margin: 14rem 0 8rem;
     border-top: 2px solid #000;
     background: #fb7800;
     position: relative;
     cursor: pointer;
-    bottom: -3rem;
     &:hover {
         & > Figure {
             transition: all .4s ease .05s;
@@ -46,8 +45,7 @@ const HomeEconomy = styled.a`
 
 const Figure = styled.figure`
     max-width: 340px;
-    margin: -6rem 0 1rem 0;
-    
+    margin: -6rem 0 -3rem 0;
     display: block;
 `;
 
@@ -61,7 +59,6 @@ const Mangrove = styled.div`
     border-bottom: 1px solid #000;
     background: #fff;
     position: relative;
-    top: -3rem;
 `;
 
 const Arrow = styled.div`

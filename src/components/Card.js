@@ -4,44 +4,42 @@ import Text from '../elements/Text';
 import logo from '../shared/NEWNEEKlogo.png';
 
 const Card = (props) => {
-  const { img, value, postId, category, title, thumbnail, plaincontent, date, hashtag, _onClick } = props;
-  const emoji_list = {'집콕': '🏠', '국내정치': '⚖️', '세계': '🌐', '테크': '🤖', '경제': '💰', '노동·일': '💪', '환경': '🌳', '여성': '🧑', '코로나19': '😷'};
-  const emoji = emoji_list[category];
+  const { img, value, postId, category, title, thumbnail, plainContent, date, hashtag, _onClick } = props;
+  const emoji_list = {'집콕': '🏠', '국내정치': '⚖️', '세계': '🌐', '테크': '🤖', '경제': '💰', '노동/일': '💪', '환경': '🌳', '여성': '🧑', '코로나19': '😷'};
+  const emoji = category ? emoji_list[category] : '📃';
 
-  if (thumbnail) {
-    return (                          // 썸네일 있을 때
-      <CardBox onClick={_onClick}>
-        <div style={{width: '100%', height: '100%', position: 'relative'}}>
-        <a href style={{boxSizing: 'border-box', position: 'relative', display: 'block', borderStyle: 'solid', borderColor: '#161616', borderWidth: '0 1px 1px 0', borderCollapse: 'collapse', height: 'auto', overflow: 'hidden'}}>
-          <div style={{width: '100%', height: '100%', position: 'absolute'}}>
+  if (thumbnail) {                          // 이미지 있을 때
+    return (
+      <React.Fragment>
+        <CardBox href={`/detailnews/${postId}`}>
+          <CardInner>
+            <CardThumbnail>
+              <Image src={thumbnail} alt=''></Image>
+            </CardThumbnail>
             <CardBody>
-            <img src={thumbnail} style={{width: '100%', height: 'auto', overflow: 'hidden', boxSizing: 'border-box', position: 'relative', verticalAlign: 'middle'}} alt=''></img>
-            <div style={{padding: '1.5rem 1.75rem', display: 'block'}}>
-              <Text mainTitle value={title} margin='0 0 0.5rem 0' fontWeight='700' lineHeight='1.4' wordBreak='keep-all' mbs='1em' mbe='1em'/>
-              <Text span value={date} padding='0' margin='0 1em 0 0'/>
-              <Text span value={category} />
-            </div>
+              <Text mainTitle value={title} margin='0 0 .5rem' fontWeight='700' lineHeight='1.4' wordBreak='keep-all' display='block' style={{filter: 'grayscale(100%)'}}></Text>
+              <CardDate>{date}</CardDate>
+              <CardCategory>{category}</CardCategory>
             </CardBody>
-          </div>
-        </a>
-        </div>
-      </CardBox>
+          </CardInner>
+        </CardBox>
+      </React.Fragment>
     )
-  } else {
-    return (                          // 썸네일 없을 때
-      <CardBox onClick={_onClick}>
-        <a href style={{boxSizing: 'border-box', position: 'relative', display: 'block', borderStyle: 'solid', borderColor: '#161616', borderWidth: '0 1px 1px 0', borderCollapse: 'collapse', cursor: 'pointer', width: 'auto', height: 'auto', overflow: 'hidden'}}>
-          <div>
-            <div style={{padding: '1.5rem 1.75rem', display: 'block', boxSizing: 'border-box'}}>
-              <Text span value={emoji} display='block' margin='-1rem 0 0 0' fontSize='3rem'/>
-              <Text mainTitle value={title} margin='0.5rem 0 1rem 0' fontWeight='700' lineHeight='1.4' wordBreak='keep-all'/>
-              <Text mainText value={plaincontent} display='-webkit-box' margin='0 0 1.5rem 0' overflow='hidden' textOverflow='ellipsis' whiteSpace='normal' height='3.6em' textAlign='left' wordWrap='break-word' wlc='2' wbo='vertical'/>
-              <Text span value={date} padding='0' margin='0 1em 0 0' position='absolute' left='1.75rem' bottom='1.5rem'/>
-              <Text span value={category} position='absolute' left='1.75rem' bottom='1.5rem'/>
-            </div>
-          </div>
-        </a>
-      </CardBox>
+  } else {                                  // 이미지 없을 때
+    return (
+      <React.Fragment>
+        <CardBox href={`/detailnews/${postId}`}>
+          <CardInner2>
+            <CardBody>
+              <CardEmoji>{emoji}</CardEmoji>
+              <Text mainTitle value={title} margin='.5rem 0 1rem' fontWeight='700' lineHeight='1.4' wordBreak='keep-all' display='block' style={{filter: 'grayscale(100%)'}} />
+              <Text mainText value={plainContent} display='-webkit-box' margin='0 0 1.5rem' overflow='hidden' textOverflow='ellipsis' whiteSpace='normal' height='3.6em' textAlign='left' wordWrap='break-word' wlc='2' wbo='vertical' style={{filter: 'grayscale(100%)'}} />
+              <CardDate2>{date}</CardDate2>
+              <CardCategory2>{category}</CardCategory2>
+            </CardBody>
+          </CardInner2>
+        </CardBox>
+      </React.Fragment>
     )
   }
 };
@@ -57,31 +55,102 @@ Card.defaultProps = {
   _onClick: () => {},
 }
 
-const CardBox = styled.div`
+const CardBox = styled.a`
   width: 25%;
-  @media (max-width: 1360px) {
-    width: 33.3333%;
-  }
   @media (max-width: 900px) {
     width: 50%;
   }
-  @media (max-width: 720px) {
-    width: 100%;
+  @media (max-width: 1360px) {
+    width: 33.3333%;
   }
-  background-color: #ebebeb;
+  background: #ebebeb;
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  color: #161616;
+  border: 1px solid #161616;
+  border-width: 0 1px 1px 0;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
   &:hover {
     background-color: #fff;
-    filter: grayscale(0%);
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
   }
-  cursor: pointer;
+`;
+
+const CardInner = styled.div`
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  display: block;
+`;
+
+const CardThumbnail = styled.figure`
+  width: auto;
+  height: auto;
+  border-bottom: 1px solid #161616;
+  border-radius: 0;
+  overflow: hidden;
+  background: #ebebeb;
+  box-sizing: border-box;
   position: relative;
+  margin: 0;
+  display: block;
+`;
+
+const Image = styled.img`
+  vertical-align: middle;
+  width: 100%;
+  border: 0;
 `;
 
 const CardBody = styled.div`
   padding: 1.5rem 1.75rem;
   box-sizing: border-box;
   display: block;
+`;
+
+const CardDate = styled.time`
+  padding: 0;
+  margin-right: 1em;
+`;
+
+const CardCategory = styled.i`
+  font-style: normal;
+`;
+
+const CardInner2 = styled.div`
+  width: 100%;
+  height: 100%;
+  &:after {
+    content: '';
+    display: block;
+    padding-bottom: 30%;
+  }
+`;
+
+const CardEmoji = styled.span`
+  display: block;
+  margin-top: -1rem;
+  font-size: 3rem;
+`;
+
+const CardDate2 = styled.time`
+  position: absolute;
+  left: 1.75rem;
+  bottom: 1.5rem;
+  padding: 0;
+  margin-right: 1em;
+`;
+
+const CardCategory2 = styled.i`
+  position: absolute;
+  left: 8.3rem;
+  bottom: 1.5rem;
+  font-style: normal;
 `;
 
 export default Card;

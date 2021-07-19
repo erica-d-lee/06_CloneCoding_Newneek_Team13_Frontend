@@ -16,29 +16,26 @@ const initialState = {
 };
 
 // 액션함수
-const setNewsDB = () => { // 메인페이지 뉴스 목록 불러오기
-    return function (dispatch) {
-        const axios = require('axios');
-        axios
-            .get('http://15.164.244.197/api/all')
-            .then((response) => {
-                dispatch(setNews(response.data.posts));
-            })
-            .catch((err) => {
-                console.log(`메인 페이지 뉴스 불러오기 에러: ${err}`);
-            });
-    };
+const setNewsDB = () => {               // 메인페이지 뉴스 목록 불러오기
+  return function(dispatch) {
+    const axios = require('axios');
+    axios.get('http://15.164.244.197/api/all').then((response) => {
+      dispatch(setNews(response.data.posts));
+    }).catch((err) => {
+      console.log(`메인 페이지 뉴스 불러오기 에러: ${err}`);
+    });
+  };
 };
 
 const setOneNewsDB = (postId) => { // 상세페이지 개별 뉴스 불러오기
     return function (dispatch) {
-        
+      
         const axios = require('axios');
         axios
             .get(`http://15.164.244.197/api/detail/${postId}`)
             .then((response) => {
                 console.log(response.data.detail);
-                dispatch(setNews(response.data.detail));
+                dispatch(detailNews(response.data.detail));
             })
             .catch((err) => {
                 console.log(`상세 페이지 뉴스 불러오기 에러: ${err}`);
@@ -48,10 +45,12 @@ const setOneNewsDB = (postId) => { // 상세페이지 개별 뉴스 불러오기
 
 // 리듀서
 export default handleActions({
-    
+  [SET_NEWS]: (state, action) => produce(state, (draft) => {
+    draft.list = [...action.payload.news_list];
+  }),
     [DETAIL_NEWS]: (state, action) => produce(state, (draft) => {
-    console.log(action.payload.news_list)
     draft.list.push(action.payload.news_list);
+
   }),
   }, initialState);
 
