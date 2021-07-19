@@ -5,7 +5,7 @@ import {history} from "../redux/configureStore";
 const Search = () => {
     return (
         <React.Fragment>
-            <div>
+            <SearchBack>
                 <SearchForm>
                     <TextFiled>
                         <SearchClose
@@ -32,12 +32,19 @@ const Search = () => {
                         </SearchOption>
                     </SearchResult>
                 </SearchForm>
-            </div>
+            </SearchBack>
         </React.Fragment>
     );
 };
 
 Search.defaultProps = {};
+
+const SearchBack = styled.form `
+    background: #ebebeb;
+    width: 100%;
+    height:100%
+    
+`;
 
 const SearchForm = styled.form `
     background: #ebebeb;

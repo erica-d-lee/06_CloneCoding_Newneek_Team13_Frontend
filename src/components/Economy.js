@@ -10,7 +10,7 @@ const Economy = () => {
                 <Figure>
                     <img src={gosum} style={{verticalAlign: 'middle', width: '100%', border: '0px'}} alt=''></img>
                 </Figure>
-                <Mangrove>
+                <Mangrove onClick={() => window.alert('화이팅!')}>
                     <Text value='고슴이는 경제초보에서 탈출할 수 있을까요?' fontColor='#000' fontWeight='500' span detailText />
                     <Arrow>
                         <Line></Line>
@@ -34,7 +34,6 @@ const HomeEconomy = styled.a`
     border-top: 2px solid #000;
     background: #fb7800;
     position: relative;
-    cursor: pointer;
     &:hover {
         & > Figure {
             transition: all .4s ease .05s;
@@ -59,6 +58,7 @@ const Mangrove = styled.div`
     border-bottom: 1px solid #000;
     background: #fff;
     position: relative;
+    cursor: pointer;
 `;
 
 const Arrow = styled.div`

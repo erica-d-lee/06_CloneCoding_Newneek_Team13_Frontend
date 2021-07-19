@@ -1,7 +1,7 @@
 import React from 'react';
 import { ConnectedRouter } from "connected-react-router";
 import {Search, CategoryNews, DetailNews, Main, SearchNews} from "../pages";
-import {BrowserRouter, Route,} from "react-router-dom";
+import {BrowserRouter, Route} from "react-router-dom";
 import {history} from "../redux/configureStore";
 
 
@@ -16,7 +16,6 @@ function App() {
                     <Route path="/search" exact component={Search}/>
                     <Route path="/search/news" exact component={SearchNews}/>
                     <Route path="/detailnews/:id" exact component={DetailNews}/>
-                    
             </ConnectedRouter>
         </React.Fragment>
     );

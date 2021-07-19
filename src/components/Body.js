@@ -4,7 +4,6 @@ import {CardList, Category, Economy} from './';
 import {Menu, Button} from '../elements';
 
 const Body = (props) => {
-  console.log(props)
   const url = window.location.pathname;
   const [main, setMain] = useState(false);
   useEffect(() => {

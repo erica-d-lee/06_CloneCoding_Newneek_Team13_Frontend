@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect,useState} from 'react';
 import styled from 'styled-components';
 import {Economy, ProgressBar} from './';
 import {Menu, Button} from '../elements';
@@ -10,9 +10,9 @@ const DetailContent = () => {
   const postId = window.location.pathname.split('/detailnews/')[1];
   const news_list = useSelector((state) => state.news.list);
   const news = news_list.find((news_item) => news_item.postId == postId);
+  const [hashtag, hashtageChange] = useState()
   
-  
-  
+  console.log(news)
   useEffect(() => {
       if (news) {
           return;
@@ -26,12 +26,15 @@ const DetailContent = () => {
     return (
       <div>로딩중</div>
     )
-  } console.log(news.htmlContent)
- 
+  } 
+    
     // const content = "{news.htmlContent}"
     const {scrollTop} = document.documentElement;
     const content = news.htmlContent 
+    console.log(news.hashtag)
+    
     return (
+       
         <React.Fragment>
             <div
                 style={{
@@ -59,10 +62,13 @@ const DetailContent = () => {
                                 padding: '0 0 3rem'
                             }}> 
                             <PostBodyHtml dangerouslySetInnerHTML={{__html: content}}>
-                            </PostBodyHtml></div>
+                            </PostBodyHtml>
+                            </div>
                     </PostBody>
                     <HashTag>
-                        <HashItem>{news.hashtag}</HashItem>
+                      { news.hashtag.map(function(n,i){
+                        return (<HashItem key={i}>{n}</HashItem>
+                        )})}  
                     </HashTag>
                 </Div>
                 <Economy/>
