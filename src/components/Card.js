@@ -57,11 +57,14 @@ Card.defaultProps = {
 
 const CardBox = styled.a`
   width: 25%;
+  @media (max-width: 1360px) {
+    width: 33.3333%;
+  }
   @media (max-width: 900px) {
     width: 50%;
   }
-  @media (max-width: 1360px) {
-    width: 33.3333%;
+  @media (max-width: 720px) {
+    width: 100%;
   }
   background: #ebebeb;
   box-sizing: border-box;

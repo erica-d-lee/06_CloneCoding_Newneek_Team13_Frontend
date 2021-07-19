@@ -2,28 +2,33 @@ import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import Card from './Card';
 import Button from '../elements/Button';
-import {history} from '../redux/configureStore';
 import { useDispatch, useSelector } from 'react-redux';
 import { actionCreators as newsActions } from '../redux/modules/news';
 
 const CardList = (props) => {
   const dispatch = useDispatch();
-  const [end, setEnd] = useState(12);
-  const allnews_list = useSelector(state => state.news.list);
-  const news_list = allnews_list.slice(0, end);
-  const loadMoreNews = () => {
-    if (end === allnews_list.length) {
-      return;
-    }
-    if (0 <= allnews_list.length - end <= 12) {
-      setEnd(allnews_list.length)
-    } else {
-    setEnd(end + 12);
-    }
-  }
-  useEffect(() => {
+  const [end, setEnd] = useState(12);      
+  const all_news = useSelector(state => state.news.list);
+  const allnews_list = all_news.slice(0, all_news.length).sort(function(a, b) {                                   
+    const dateA = a.date;                 
+    const dateB = b.date;
+    if (dateA < dateB) return 1;
+    if (dateA > dateB) return -1;
+    if (dateA === dateB) return 0;
+  });
+
+  useEffect(() => {                     
     dispatch(newsActions.setNewsDB());
   }, []);
+
+  const news_list = allnews_list.slice(0, end); 
+  const loadMoreNews = () => {
+    if (end >= allnews_list.length) {
+      window.alert('마지막 목록입니다!');
+      return;
+    }
+    setEnd(end + 12);
+  }
 
   return(
     <React.Fragment>
