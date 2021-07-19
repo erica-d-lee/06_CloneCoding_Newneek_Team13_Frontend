@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Footer, Header, Body, IntroHead,BottomBar } from "../components/";
 
 const Main = (props) => {

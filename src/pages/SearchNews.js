@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {BrowserRouter} from "react-router-dom";
-import {Footer, Header, CardList, Body} from "../components/";
+import {Footer, Header, CardList} from "../components/";
 
 
 const SearchNews = (props) => {

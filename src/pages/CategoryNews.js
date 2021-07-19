@@ -1,7 +1,5 @@
 import React from "react";
-import styled from "styled-components";
-import { BrowserRouter } from "react-router-dom";
-import {  Banner, Category, Economy, Footer, Header, Body } from "../components/";
+import { Footer, Header, Body } from "../components/";
 
 const CategoryNews = (props) => {
     return (

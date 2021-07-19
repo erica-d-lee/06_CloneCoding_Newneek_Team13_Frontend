@@ -9,7 +9,7 @@ const Header = () => {
         <React.Fragment>
             <NavbarTop>
                 <NavbarTopIn/>
-            </NavbarTop>   
+            </NavbarTop>
             <Navbar>
                 <NavbarInner>
                     <NavbarMenu>
@@ -29,7 +29,13 @@ const Header = () => {
                         onClick={() => {
                             history.push("/search");
                         }}>
-                        <img src={searchbtn} alt="searchbtn" style={{width: "110%", height: "100%"}}/>
+                        <img
+                            src={searchbtn}
+                            alt="searchbtn"
+                            style={{
+                                width: "110%",
+                                height: "100%"
+                            }}/>
                     </SearchButton>
                 </NavbarInner>
             </Navbar>

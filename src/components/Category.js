@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import {Menu} from '../elements';
 import {history} from '../redux/configureStore';
+
 const Category = () => {
     return (
     <React.Fragment>
@@ -24,10 +25,6 @@ const Category = () => {
         <CategoryBackdrop />
     </React.Fragment>
     );
-};
-
-Category.defaultProps = {
-    
 };
 
 const A = styled.a`
