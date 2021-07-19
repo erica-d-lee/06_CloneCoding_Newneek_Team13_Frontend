@@ -13,9 +13,10 @@ function App() {
             <ConnectedRouter history={history}>
                     <Route path="/" exact component={Main}/>
                     <Route path="/:category" exact component={CategoryNews}/>
+                    <Route path="/search" exact component={Search}/>
                     <Route path="/search/news" exact component={SearchNews}/>
                     <Route path="/detailnews/:id" exact component={DetailNews}/>
-                    <Route path="/search" exact component={Search}/>
+                    
             </ConnectedRouter>
         </React.Fragment>
     );

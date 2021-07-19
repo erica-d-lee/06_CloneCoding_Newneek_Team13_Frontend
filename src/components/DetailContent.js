@@ -12,21 +12,25 @@ const DetailContent = () => {
   const news = news_list.find((news_item) => news_item.postId == postId);
   
   
+  
   useEffect(() => {
       if (news) {
           return;
       }
       dispatch(newsActions.setOneNewsDB(postId));
   },[]);
+  
+  
 
   if (!news){
     return (
       <div>로딩중</div>
     )
   } console.log(news.htmlContent)
-  
+ 
     // const content = "{news.htmlContent}"
     const {scrollTop} = document.documentElement;
+    const content = news.htmlContent 
     return (
         <React.Fragment>
             <div
@@ -53,7 +57,9 @@ const DetailContent = () => {
                             className='Room for Data'
                             style={{
                                 padding: '0 0 3rem'
-                            }}> {news.htmlContent}</div>;
+                            }}> 
+                            <PostBodyHtml dangerouslySetInnerHTML={{__html: content}}>
+                            </PostBodyHtml></div>
                     </PostBody>
                     <HashTag>
                         <HashItem>{news.hashtag}</HashItem>
@@ -69,10 +75,21 @@ DetailContent.defaultProps = {
    
 }
 
+
+
 const Div = styled.div `
   @media (max-width: 1360px) {
     max-width: 1040px;
   }
+`;
+
+const PostBodyHtml =styled.div `
+  & img {
+    display: block;
+    margin: 0 auto;
+    width: auto;
+    max-width: 100%;}
+
 `;
 
 const PostHead = styled.header `
