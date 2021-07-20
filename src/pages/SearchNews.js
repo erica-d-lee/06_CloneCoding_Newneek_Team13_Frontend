@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from "react";
-import { useDispatch } from "react-redux";
+import React, {useEffect, useState, } from "react";
+import { useDispatch, useSelector} from "react-redux";
 import styled from "styled-components";
 import {Footer, Header, CardList} from "../components/";
 import {actionCreators as newsActions} from "../redux/modules/news"
@@ -8,6 +8,8 @@ import {BottomBar} from "../components/";
 const SearchNews = (props) => {
 
     const dispatch=useDispatch()
+    const newsList=useSelector(state=>state.news.list)
+
     const [sort,setSort]=useState("date")
     const keyword = window
         .location
@@ -19,10 +21,7 @@ const SearchNews = (props) => {
        dispatch(newsActions.setSearchDB(keyword_dec,sort))
        
     },[])
- 
-
     
-
     return (
         <React.Fragment>
             <Header/>
@@ -30,7 +29,7 @@ const SearchNews = (props) => {
                 <h1>
                     <Text>
                       {keyword_dec}</Text>의 검색 결과에요.</h1>
-                <Status>🦔고슴이: 개 찾았슴!</Status>
+                <Status>🦔고슴이: {newsList.length}개 찾았슴!</Status>
                 <Sorting>
                     <STBtn onClick={()=>setSort('date')}>최신순</STBtn>
                     <STBtn2 onClick={()=>setSort('relative')}>관련순</STBtn2>
