@@ -1,7 +1,7 @@
 import React from 'react';
 import { ConnectedRouter } from "connected-react-router";
 import {Search, CategoryNews, DetailNews, Main, SearchNews} from "../pages";
-import {BrowserRouter, Route} from "react-router-dom";
+import {Route} from "react-router-dom";
 import {history} from "../redux/configureStore";
 
 
@@ -12,9 +12,9 @@ function App() {
         <React.Fragment>
             <ConnectedRouter history={history}>
                     <Route path="/" exact component={Main}/>
-                    <Route path="/:category" exact component={CategoryNews}/>
+                    <Route path="/category/:category" exact component={CategoryNews}/>
                     <Route path="/search" exact component={Search}/>
-                    <Route path="/search/news" exact component={SearchNews}/>
+                    <Route path="/searchnews/:keyword" exact component={SearchNews}/>
                     <Route path="/detailnews/:id" exact component={DetailNews}/>
             </ConnectedRouter>
         </React.Fragment>

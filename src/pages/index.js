@@ -4,4 +4,4 @@ import DetailNews from "./DetailNews";
 import Main from "./Main";
 import SearchNews from "./SearchNews";
 
-export { Search, CategoryNews, DetailNews, Main, SearchNews };
+export { Search, CategoryNews, DetailNews, Main, SearchNews};

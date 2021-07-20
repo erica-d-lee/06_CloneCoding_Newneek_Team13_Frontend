@@ -34,7 +34,6 @@ const DetailContent = () => {
     console.log(news.hashtag)
     
     return (
-       
         <React.Fragment>
             <div
                 style={{
@@ -77,12 +76,6 @@ const DetailContent = () => {
     )
 };
 
-DetailContent.defaultProps = {
-   
-}
-
-
-
 const Div = styled.div `
   @media (max-width: 1360px) {
     max-width: 1040px;
@@ -95,6 +88,9 @@ const PostBodyHtml =styled.div `
     margin: 0 auto;
     width: auto;
     max-width: 100%;}
+  & a {
+    color:black;
+  }  
 
 `;
 

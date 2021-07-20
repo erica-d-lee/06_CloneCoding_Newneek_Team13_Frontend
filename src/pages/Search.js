@@ -1,39 +1,50 @@
 import React, {useState}from "react";
 import styled from "styled-components";
 import {history} from "../redux/configureStore";
-
+import {BottomBar} from "../components/";
 const Search = (props) => {
     const [text, setText] = useState("");
+
     const write = () =>{
         if (text===""){
-            window.alert("댓글을 입력해주세요!")
-            return;
-        }
-        setText("");
-        history.push(`/search/news/${text}`);  
+           window.alert("검색어를 입력해주세요!");
+            return;}
+        
+        setText();
+        history.push(`/searchnews/:keyword=${text}`);  
     };
 
+    const handleChange=(e)=>{
+        setText(e.target.value);
+    }
+
+    const onKeyPress=(e)=>{
+        if(e.key=='Enter'){
+           write();
+        }
+    }
+    
         return (
             <React.Fragment>
                 <SearchBack>
                     <SearchForm>
-                        <TextFiled>
-                            <SearchClose
-                                onClick={() => {
-                                    history.push("/");
+                        <TextField>
+                            <SearchClose onClick={() => {
+                                    history.push("./");
                                 }}>
                                 <IconArrow/>
                             </SearchClose>
-                            <TextFildInput
+                            <TextFieldInput
                                 type="text"
                                 id="help-search"
                                 placeholder="고슴아 이게 궁금해. (인물, 이슈)"
+                                onKeyPress={onKeyPress}
                                 name="search"
-                                value={text}
-                                onChange="{(e}=>{setWord(e.target.value);
-                                }}"
-                                onSubmit={write}/>
-                        </TextFiled>
+                                onChange={handleChange}
+                                />
+                        </TextField>
+                            <button style={{display:
+                            'none'}} onClick={write}></button>
                         <SearchResult>
                             <SearchOption>
                                 <SearchTitle>고슴이 추천 키워드
@@ -47,6 +58,7 @@ const Search = (props) => {
                         </SearchResult>
                     </SearchForm>
                 </SearchBack>
+                <BottomBar/>
             </React.Fragment>
 );
 };
@@ -74,7 +86,7 @@ const SearchForm = styled.form `
     z-index: 5;
 `;
 
-const TextFiled = styled.fieldset `
+const TextField = styled.fieldset `
     border: 0;
     margin: 0px auto;
     position: relative;
@@ -128,7 +140,8 @@ const IconArrow = styled.i `
         -webkit-transform: translateY(-50%);
         transform: translateY(-50%)};      
 `;
-const TextFildInput = styled.input `
+
+const TextFieldInput = styled.input `
     font-weight:bolder;
     height: 52px;
     font-size: 1.125rem;

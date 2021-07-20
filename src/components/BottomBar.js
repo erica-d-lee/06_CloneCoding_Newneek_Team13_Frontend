@@ -4,14 +4,14 @@ import styled from 'styled-components';
 const BottomBar = () => {
     return (
     <React.Fragment>
-       <Bottombar>
-       <A class="is-active" href="/"><Span role="img" aria-label="" class="emoji">🏠</Span><Span2>홈</Span2></A>
-       <A class="" href="/search"><Span role="img" aria-label="" class="emoji">🔍</Span><Span2>검색</Span2></A>
-       <A class="" href="/"><Span role="img" aria-label="" class="emoji">💰</Span><Span2>경제기본기</Span2></A>
-       <A href="/" class=""><Span
-       role="img" aria-label="" class="emoji">🌹</Span><Span2>여성의 날</Span2></A>
-       <A class="" href="/"><Span role="img" aria-label="" class="emoji">🙍</Span><Span2>마이페이지</Span2></A>
-       </Bottombar>
+        <Bottombar>
+        <A class="is-active" href="/"><Span role="img" aria-label="" class="emoji">🏠</Span><Span2>홈</Span2></A>
+        <A class="" href="/search"><Span role="img" aria-label="" class="emoji">🔍</Span><Span2>검색</Span2></A>
+        <A class="" href="/"><Span role="img" aria-label="" class="emoji">💰</Span><Span2>경제기본기</Span2></A>
+        <A href="/" class=""><Span
+        role="img" aria-label="" class="emoji">🌹</Span><Span2>여성의 날</Span2></A>
+        <A class="" href="/"><Span role="img" aria-label="" class="emoji">🙍</Span><Span2>마이페이지</Span2></A>
+        </Bottombar>
     </React.Fragment>
     );
 };
