@@ -9,17 +9,13 @@ const SearchNews = (props) => {
 
     const dispatch=useDispatch()
     const [sort,setSort]=useState("date")
-    const keyword = window
-        .location
-        .pathname
-        .split('=')[1];
+    const keyword = window.location.pathname.split('=')[1];
     const keyword_dec=decodeURI(keyword)
 
     useEffect(()=>{
-       dispatch(newsActions.setSearchDB(keyword_dec,sort))
-       
+        dispatch(newsActions.setSearchDB(keyword_dec,sort))
     },[])
- 
+
 
     
 
@@ -29,11 +25,20 @@ const SearchNews = (props) => {
             <SNMain>
                 <h1>
                     <Text>
-                      {keyword_dec}</Text>의 검색 결과에요.</h1>
+                    {keyword_dec}</Text>의 검색 결과에요.</h1>
                 <Status>🦔고슴이: 개 찾았슴!</Status>
                 <Sorting>
+                    {sort === 'relative' ? 
+                    <>
+                    <STBtn2 onClick={()=>setSort('date')}>최신순</STBtn2>
+                    <STBtn onClick={()=>setSort('relative')}>관련순</STBtn>
+                    </>
+                    :
+                    <>
                     <STBtn onClick={()=>setSort('date')}>최신순</STBtn>
                     <STBtn2 onClick={()=>setSort('relative')}>관련순</STBtn2>
+                    </>
+                    }
                 </Sorting>
                 <CardList keyword={keyword}/>
             </SNMain>
@@ -82,7 +87,6 @@ const STBtn = styled.button `
     background: #000;
     cursor: pointer;
     font: inherit;
-    border-sizing=border-box;
     appearance: auto;
     display: inline-block;
     align-items: flex-start;
@@ -98,7 +102,6 @@ const STBtn2 = styled.button `
     background: none;
     cursor: pointer;
     font: inherit;
-    border-sizing=border-box;
     appearance: auto;
     display: inline-block;
     align-items: flex-start;
