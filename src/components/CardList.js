@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Card from './Card';
 import Button from '../elements/Button';
 import { useDispatch, useSelector } from 'react-redux';
-import { actionCreators as newsActions } from '../redux/modules/news';
+import { actionCreators as newsActions } from '../redux/modules/news';import {Helmet} from 'react-helmet';
 
 const CardList = (props) => {
   const dispatch = useDispatch();
@@ -39,6 +39,11 @@ const CardList = (props) => {
 
   return(
     <React.Fragment>
+      { category && 
+        <Helmet>
+          <title>'{category.split(' ')[1]}' 콘텐츠</title>
+        </Helmet>
+      }
       <Posts>
         {news_list && news_list.map((n) => {
           return <Card {...n} />

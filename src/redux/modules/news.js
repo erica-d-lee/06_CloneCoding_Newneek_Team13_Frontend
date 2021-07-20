@@ -60,12 +60,18 @@ const setCategoryNewsDB = (category) => {  // 카테고리별 뉴스 목록 불�
 };
 
 const sendMail = (email, nickname) => {      // 환영 메일 발송하기
-    const axios = require('axios');
-    axios.post('http://15.164.244.197/api/mailing').then((response) => {
-      // console.log(response.data);
-    }).catch((err) => {
-      console.log(`환영 메일 발송하기 에러: ${err}`);
-    })
+    return function(dispatch) {
+      const axios = require('axios');
+      axios.post('http://15.164.244.197/api/mailing', {
+        emailAddress: email,
+        nickname: nickname
+      }).then((response) => {
+        // console.log(response.data);
+        window.alert('구독 신청이 완료되었습니다');
+      }).catch((err) => {
+        console.log(`환영 메일 발송하기 에러: ${err}`);
+      })
+    }
 }
 
 export default handleActions({
