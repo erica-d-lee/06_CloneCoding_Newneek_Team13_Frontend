@@ -5,7 +5,7 @@ import {Menu, Button} from '../elements';
 
 const Body = (props) => {
   const url = window.location.pathname;
-  const url_category = url.split('/')[1];
+  const url_category = url.split('/category/')[1];
   const [main, setMain] = useState(false);
   const category_obj = {'stayhome': '🏠 집콕', 'politics': '⚖️ 국내정치', 'world': '🌐 세계', 'tech': '🤖 테크', 'economy': '💰 경제', 'labor-work': '💪 노동/일', 'environment': '🌳 환경', 'women': '🧑 여성', 'covid-19': '😷 코로나19'};
   const category = category_obj[url_category]

@@ -1,8 +1,7 @@
 import Search from "./Search";
-import Searche from './Searche';
 import CategoryNews from "./CategoryNews";
 import DetailNews from "./DetailNews";
 import Main from "./Main";
 import SearchNews from "./SearchNews";
 
-export { Search, CategoryNews, DetailNews, Main, SearchNews, Searche };
+export { Search, CategoryNews, DetailNews, Main, SearchNews};

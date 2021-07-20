@@ -11,15 +11,15 @@ const Category = () => {
                 <A className='category-link' onClick={() => {
                             history.push("/");
                         }}>전체</A>
-                <A className='category-link' onClick={() => {history.push('/stayhome')}}><Menu emoji='🏠' name='집콕' hover='color: #fb7800;'/></A>
-                <A className='category-link' onClick={() => {history.push('/politics')}}><Menu emoji='⚖️' name='국내정치' hover='color: #fb7800;'/></A>
-                <A className='category-link' onClick={() => {history.push('/world')}}><Menu emoji='🌐' name='세계' hover='color: #fb7800;'/></A>
-                <A className='category-link' onClick={() => {history.push('/tech')}}><Menu emoji='🤖' name='테크' hover='color: #fb7800;'/></A>
-                <A className='category-link' onClick={() => {history.push('/economy')}}><Menu emoji='💰' name='경제' hover='color: #fb7800;'/></A>
-                <A className='category-link' onClick={() => {history.push('/labor-work')}}><Menu emoji='💪' name='노동·일' hover='color: #fb7800;'/></A>
-                <A className='category-link' onClick={() => {history.push('/environment')}}><Menu emoji='🌳' name='환경' hover='color: #fb7800;'/></A>
-                <A className='category-link' onClick={() => {history.push('/women')}}><Menu emoji='🧑' name='여성' hover='color: #fb7800;'/></A>
-                <A className='category-link' onClick={() => {history.push('/covid-19')}}><Menu emoji='😷' name='코로나19' hover='color: #fb7800;'/></A>
+                <A className='category-link' onClick={() => {history.push('/category/stayhome')}}><Menu emoji='🏠' name='집콕' hover='color: #fb7800;'/></A>
+                <A className='category-link' onClick={() => {history.push('/category/politics')}}><Menu emoji='⚖️' name='국내정치' hover='color: #fb7800;'/></A>
+                <A className='category-link' onClick={() => {history.push('/category/world')}}><Menu emoji='🌐' name='세계' hover='color: #fb7800;'/></A>
+                <A className='category-link' onClick={() => {history.push('/category/tech')}}><Menu emoji='🤖' name='테크' hover='color: #fb7800;'/></A>
+                <A className='category-link' onClick={() => {history.push('/category/economy')}}><Menu emoji='💰' name='경제' hover='color: #fb7800;'/></A>
+                <A className='category-link' onClick={() => {history.push('/category/labor-work')}}><Menu emoji='💪' name='노동·일' hover='color: #fb7800;'/></A>
+                <A className='category-link' onClick={() => {history.push('/category/environment')}}><Menu emoji='🌳' name='환경' hover='color: #fb7800;'/></A>
+                <A className='category-link' onClick={() => {history.push('/category/women')}}><Menu emoji='🧑' name='여성' hover='color: #fb7800;'/></A>
+                <A className='category-link' onClick={() => {history.push('/category/covid-19')}}><Menu emoji='😷' name='코로나19' hover='color: #fb7800;'/></A>
             </div>
         </nav>
         <CategoryBackdrop />
