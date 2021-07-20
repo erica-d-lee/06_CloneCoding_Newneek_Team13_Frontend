@@ -43,9 +43,13 @@ const CardList = (props) => {
 
   return(
     <React.Fragment>
-      { category && 
+      { category ? 
         <Helmet>
           <title>'{category.split(' ')[1]}' 콘텐츠</title>
+        </Helmet>
+        :
+        <Helmet>
+          <title>뉴닉 NEWNEEK</title>
         </Helmet>
       }
       <Posts>
