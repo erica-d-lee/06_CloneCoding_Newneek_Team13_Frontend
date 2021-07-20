@@ -4,6 +4,7 @@ import {Economy, ProgressBar} from './';
 import {Menu, Button} from '../elements';
 import { actionCreators as newsActions } from '../redux/modules/news';
 import { useDispatch, useSelector } from 'react-redux';
+import {Helmet} from 'react-helmet';
 
 const DetailContent = () => {
   const dispatch = useDispatch();
@@ -35,6 +36,9 @@ const DetailContent = () => {
     
     return (
         <React.Fragment>
+            <Helmet>
+              <title>{news.title}</title>
+            </Helmet>
             <div
                 style={{
                     backgroundColor: '#ebebeb',
