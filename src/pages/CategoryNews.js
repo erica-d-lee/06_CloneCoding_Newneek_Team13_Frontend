@@ -7,7 +7,6 @@ const CategoryNews = (props) => {
         <Header/>
         <Body/>
         <Footer/>
-
     </React.Fragment>
     );
 };

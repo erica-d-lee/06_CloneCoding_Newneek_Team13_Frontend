@@ -14,7 +14,7 @@ function App() {
                     <Route path="/" exact component={Main}/>
                     <Route path="/:category" exact component={CategoryNews}/>
                     <Route path="/search" exact component={Search}/>
-                    <Route path="/search/news" exact component={SearchNews}/>
+                    <Route path="/searchnews/:keyword" exact component={SearchNews}/>
                     <Route path="/detailnews/:id" exact component={DetailNews}/>
             </ConnectedRouter>
         </React.Fragment>
