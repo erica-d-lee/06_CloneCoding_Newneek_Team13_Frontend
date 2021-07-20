@@ -1,46 +1,60 @@
-import React from "react";
+import React, {useState}from "react";
 import styled from "styled-components";
 import {history} from "../redux/configureStore";
 
-const Search = () => {
-    return (
-        <React.Fragment>
-            <SearchBack>
-                <SearchForm>
-                    <TextFiled>
-                        <SearchClose
-                            onClick={() => {
-                                history.push("/");
-                            }}>
-                            <IconArrow/>
-                        </SearchClose>
-                        <TextFildInput
-                            type="search"
-                            id="help-search"
-                            placeholder="고슴아 이게 궁금해. (인물, 이슈)"
-                            name="search"/>
-                    </TextFiled>
-                    <SearchResult>
-                        <SearchOption>
-                            <SearchTitle>고슴이 추천 키워드
-                            </SearchTitle>
-                            <SearchItem>설문조사</SearchItem>
-                            <SearchItem>델타변이</SearchItem>
-                            <SearchItem>G7</SearchItem>
-                            <SearchItem>택배</SearchItem>
-                            <SearchItem>플랫폼</SearchItem>
-                        </SearchOption>
-                    </SearchResult>
-                </SearchForm>
-            </SearchBack>
-        </React.Fragment>
-    );
+const Search = (props) => {
+    const [text, setText] = useState("");
+    const write = () =>{
+        if (text===""){
+            window.alert("댓글을 입력해주세요!")
+            return;
+        }
+        setText("");
+        history.push(`/search/news/${text}`);  
+    };
+
+        return (
+            <React.Fragment>
+                <SearchBack>
+                    <SearchForm>
+                        <TextFiled>
+                            <SearchClose
+                                onClick={() => {
+                                    history.push("/");
+                                }}>
+                                <IconArrow/>
+                            </SearchClose>
+                            <TextFildInput
+                                type="text"
+                                id="help-search"
+                                placeholder="고슴아 이게 궁금해. (인물, 이슈)"
+                                name="search"
+                                value={text}
+                                onChange="{(e}=>{setWord(e.target.value);
+                                }}"
+                                onSubmit={write}/>
+                        </TextFiled>
+                        <SearchResult>
+                            <SearchOption>
+                                <SearchTitle>고슴이 추천 키워드
+                                </SearchTitle>
+                                <SearchItem>설문조사</SearchItem>
+                                <SearchItem>델타변이</SearchItem>
+                                <SearchItem>G7</SearchItem>
+                                <SearchItem>택배</SearchItem>
+                                <SearchItem>플랫폼</SearchItem>
+                            </SearchOption>
+                        </SearchResult>
+                    </SearchForm>
+                </SearchBack>
+            </React.Fragment>
+);
 };
 
 Search.defaultProps = {};
 
-const SearchBack = styled.form `
-    background: #ebebeb;
+const SearchBack = styled.div `
+    backgroundColor: green;
     width: 100%;
     height:100%
     
@@ -57,7 +71,7 @@ const SearchForm = styled.form `
     right: 0;
     top: 0;
     bottom: 0;
-    z-index: 6;
+    z-index: 5;
 `;
 
 const TextFiled = styled.fieldset `
