@@ -1,5 +1,5 @@
 import React from "react";
-import { Footer, Header, DetailContent } from "../components/";
+import { Footer, Header, DetailContent,BottomBar } from "../components/";
 
 const DetailNews = (props) => {
     return (
@@ -7,6 +7,7 @@ const DetailNews = (props) => {
         <Header />
         <DetailContent/>
         <Footer />
+        <BottomBar/>
     </React.Fragment>
     );
 };

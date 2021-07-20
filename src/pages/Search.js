@@ -1,39 +1,76 @@
-import React from "react";
+import React, {useState}from "react";
 import styled from "styled-components";
 import {history} from "../redux/configureStore";
+import {BottomBar} from "../components/";
+const Search = (props) => {
+    const [text, setText] = useState("");
 
-const Search = () => {
-    return (
-        <React.Fragment>
-                <SearchForm>
-                    <TextFiled>
-                        <SearchClose
-                            onClick={() => {
-                                history.push("/");
-                            }}>
-                            <IconArrow/>
-                        </SearchClose>
-                        <TextFildInput
-                            type="search"
-                            id="help-search"
-                            placeholder="고슴아 이게 궁금해. (인물, 이슈)"
-                            name="search"/>
-                    </TextFiled>
-                    <SearchResult>
-                        <SearchOption>
-                            <SearchTitle>고슴이 추천 키워드
-                            </SearchTitle>
-                            <SearchItem>설문조사</SearchItem>
-                            <SearchItem>델타변이</SearchItem>
-                            <SearchItem>G7</SearchItem>
-                            <SearchItem>택배</SearchItem>
-                            <SearchItem>플랫폼</SearchItem>
-                        </SearchOption>
-                    </SearchResult>
-                </SearchForm>
-        </React.Fragment>
-    );
+    const write = () =>{
+        if (text===""){
+           window.alert("검색어를 입력해주세요!");
+            return;}
+        
+        setText();
+        history.push(`/searchnews/:keyword=${text}`);  
+    };
+
+    const handleChange=(e)=>{
+        setText(e.target.value);
+    }
+
+    const onKeyPress=(e)=>{
+        if(e.key=='Enter'){
+           write();
+        }
+    }
+    
+        return (
+            <React.Fragment>
+                <SearchBack>
+                    <SearchForm>
+                        <TextField>
+                            <SearchClose onClick={() => {
+                                    history.push("./");
+                                }}>
+                                <IconArrow/>
+                            </SearchClose>
+                            <TextFieldInput
+                                type="text"
+                                id="help-search"
+                                placeholder="고슴아 이게 궁금해. (인물, 이슈)"
+                                onKeyPress={onKeyPress}
+                                name="search"
+                                onChange={handleChange}
+                                />
+                        </TextField>
+                            <button style={{display:
+                            'none'}} onClick={write}></button>
+                        <SearchResult>
+                            <SearchOption>
+                                <SearchTitle>고슴이 추천 키워드
+                                </SearchTitle>
+                                <SearchItem>설문조사</SearchItem>
+                                <SearchItem>델타변이</SearchItem>
+                                <SearchItem>G7</SearchItem>
+                                <SearchItem>택배</SearchItem>
+                                <SearchItem>플랫폼</SearchItem>
+                            </SearchOption>
+                        </SearchResult>
+                    </SearchForm>
+                </SearchBack>
+                <BottomBar/>
+            </React.Fragment>
+);
 };
+
+Search.defaultProps = {};
+
+const SearchBack = styled.div `
+    backgroundColor: green;
+    width: 100%;
+    height:100%
+    
+`;
 
 const SearchForm = styled.form `
     background: #ebebeb;
@@ -46,10 +83,10 @@ const SearchForm = styled.form `
     right: 0;
     top: 0;
     bottom: 0;
-    z-index: 6;
+    z-index: 5;
 `;
 
-const TextFiled = styled.fieldset `
+const TextField = styled.fieldset `
     border: 0;
     margin: 0px auto;
     position: relative;
@@ -104,7 +141,7 @@ const IconArrow = styled.i `
         transform: translateY(-50%)};      
 `;
 
-const TextFildInput = styled.input `
+const TextFieldInput = styled.input `
     font-weight:bolder;
     height: 52px;
     font-size: 1.125rem;
