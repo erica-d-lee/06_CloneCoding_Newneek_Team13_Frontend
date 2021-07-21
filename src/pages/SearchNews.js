@@ -30,7 +30,7 @@ const SearchNews = (props) => {
             <SNMain>
                 <h1>
                     <Text>
-                      {keyword_dec}</Text>의 검색 결과에요.</h1>
+                    {keyword_dec}</Text>의 검색 결과에요.</h1>
                 <Status>🦔고슴이: {newsList.length}개 찾았슴!</Status>
                 <Sorting>
                     {sort === 'relative' ? 

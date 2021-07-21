@@ -69,7 +69,7 @@ const setOneNewsDB = (postId) => { // 상세페이지 개별 뉴스 불러오기
     };
 };
 
-const setCategoryNewsDB = (category) => {
+const setCategoryNewsDB = (category) => {    // 카테고리별 뉴스 불러오기
     return function (dispatch) {
         const axios = require('axios');
         dispatch(loading(true));
@@ -85,7 +85,7 @@ const setCategoryNewsDB = (category) => {
     };
 };
 
-const sendMail = (email, nickname) => {
+const sendMail = (email, nickname) => {     // 환영 메일 발송하기
     return function (dispatch) {
         const axios = require('axios');
         axios
@@ -103,7 +103,7 @@ const sendMail = (email, nickname) => {
     }
 }
 
-const setSearchDB = (keyword, sort) => {
+const setSearchDB = (keyword, sort) => {      // 검색결과 뉴스 불러오기
   return function (dispatch) {
     const axios = require('axios');
     dispatch(loading(true));
