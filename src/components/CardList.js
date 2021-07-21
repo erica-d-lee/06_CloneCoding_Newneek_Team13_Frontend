@@ -53,8 +53,8 @@ const CardList = (props) => {
         </Helmet>
       }
       <Posts>
-        {news_list && news_list.map((n) => {
-          return <Card {...n} />
+        {news_list && news_list.map((n, idx) => {
+          return <Card key={idx} {...n} />
         })}
       </Posts>
       <PostsPagination>
