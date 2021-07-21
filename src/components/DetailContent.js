@@ -8,7 +8,7 @@ import {Helmet} from 'react-helmet';
 import {history} from "../redux/configureStore";
 import Spinner from "./Spinner"
 const DetailContent = () => {
- 
+
   const dispatch = useDispatch();
   const postId = window.location.pathname.split('/detailnews/')[1];
   const news_list = useSelector((state) => state.news.list);
@@ -21,12 +21,15 @@ const DetailContent = () => {
       dispatch(newsActions.setOneNewsDB(postId));
   },[]);
   
-
   if (!news){
     return (
       <Spinner/>
     )
   } 
+
+  const category_obj = {'집콕': 'stayhome', '국내정치': 'politics', '세계': 'world', '테크': 'tech', '경제': 'economy', '노동/일': 'labor-work', '환경': 'environment', '여성': 'women', '코로나19': 'covid-19'};
+  const category_key = news.category;
+  const category_value = category_obj[category_key];
 
     // const content = "{news.htmlContent}"
     const {scrollTop} = document.documentElement;
@@ -52,7 +55,7 @@ const DetailContent = () => {
                         letterSpacing: '-.0125rem'
                     }}>
                     <PostHead>
-                        <RunningHead>{news.category}</RunningHead>
+                        <RunningHead onClick={() => {history.push(`/category/${category_value}`)}}>{news.category}</RunningHead>
                         <Headline>{news.title}</Headline>
                         <HeadDate>{news.date}</HeadDate>
                         <ProgressBar/>
