@@ -1,16 +1,21 @@
 import React, {useState}from "react";
 import styled from "styled-components";
 import {history} from "../redux/configureStore";
-import {BottomBar} from "../components/";
+import {BottomBar,Spinner} from "../components/";
+import { useDispatch, useSelector } from "react-redux"
+import {actionCreators as newsActions} from "../redux/modules/news"
 const Search = (props) => {
+    const dispatch = useDispatch();
     const [text, setText] = useState("");
-
+    const loading = useSelector((state) => state.news.is_loading);
+    const recommend= ["설문조사","델타변이","G7","택배","플랫폼"]
     const write = () =>{
         if (text===""){
            window.alert("검색어를 입력해주세요!");
             return;}
         
         setText();
+        dispatch(newsActions.setLoading())
         history.push(`/searchnews/:keyword=${text}`);  
     };
 
@@ -25,6 +30,10 @@ const Search = (props) => {
     }
     
         return (
+            <>
+            {loading ? (
+                <Spinner />
+              ) : (
             <React.Fragment>
                 <SearchBack>
                     <SearchForm>
@@ -49,17 +58,17 @@ const Search = (props) => {
                             <SearchOption>
                                 <SearchTitle>고슴이 추천 키워드
                                 </SearchTitle>
-                                <SearchItem>설문조사</SearchItem>
-                                <SearchItem>델타변이</SearchItem>
-                                <SearchItem>G7</SearchItem>
-                                <SearchItem>택배</SearchItem>
-                                <SearchItem>플랫폼</SearchItem>
+                                {recommend.map(function(n,i){
+                                    return( <SearchItem onClick={()=>history.push(`searchnews/:keyword=${n}`)}
+                                        key={i}>{n}</SearchItem>)
+                                })}
                             </SearchOption>
                         </SearchResult>
                     </SearchForm>
                 </SearchBack>
                 <BottomBar/>
             </React.Fragment>
+              )}</>
 );
 };
 

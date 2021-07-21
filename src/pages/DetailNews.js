@@ -1,5 +1,6 @@
 import React from "react";
-import { Footer, Header, DetailContent,BottomBar } from "../components/";
+import { Footer, Header, DetailContent,BottomBar} from "../components/";
+
 
 const DetailNews = (props) => {
     return (

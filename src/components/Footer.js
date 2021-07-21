@@ -4,8 +4,12 @@ import styled from "styled-components";
 import {history} from "../redux/configureStore";
 import NEWNEEKlogo from "../shared/NEWNEEKlogo.png";
 const Footer = () => {
+    const search_url = window.location.pathname.split('/')[1]
     return (
         <div>
+         { search_url === 'searchnews'
+         ? "" : 
+         <>
         <FooterStatic>
             <p>  퀴어 프렌들리한 팀을 위한 
                 <MobileBlock> 뉴닉 레인보우 가이드<span role="img" aria-label="">🏳️‍🌈</span></MobileBlock>
@@ -18,6 +22,9 @@ const Footer = () => {
             </p>
             <Arrow><Line/></Arrow>
         </FooterStatic>
+        </>
+        }
+
         <FooterStatic>
             <p>
                 <MobileBlock>오늘까지 <b>487회</b> 뉴스레터를 발행했고 </MobileBlock>

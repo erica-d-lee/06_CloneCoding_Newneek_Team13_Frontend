@@ -5,15 +5,15 @@ import {Menu, Button} from '../elements';
 import { actionCreators as newsActions } from '../redux/modules/news';
 import { useDispatch, useSelector } from 'react-redux';
 import {Helmet} from 'react-helmet';
-
+import {history} from "../redux/configureStore";
+import Spinner from "./Spinner"
 const DetailContent = () => {
+ 
   const dispatch = useDispatch();
   const postId = window.location.pathname.split('/detailnews/')[1];
   const news_list = useSelector((state) => state.news.list);
   const news = news_list.find((news_item) => news_item.postId == postId);
-
-  
-  console.log(news)
+ 
   useEffect(() => {
       if (news) {
           return;
@@ -21,19 +21,18 @@ const DetailContent = () => {
       dispatch(newsActions.setOneNewsDB(postId));
   },[]);
   
-  
 
   if (!news){
     return (
-      <div>로딩중</div>
+      <Spinner/>
     )
   } 
-    
+
     // const content = "{news.htmlContent}"
     const {scrollTop} = document.documentElement;
     const content = news.htmlContent 
-    console.log(news.hashtag)
-    
+
+
     return (
         <React.Fragment>
             <Helmet>
@@ -70,7 +69,8 @@ const DetailContent = () => {
                     </PostBody>
                     <HashTag>
                       { news.hashtag.map(function(n,i){
-                        return (<HashItem key={i}>{n}</HashItem>
+                        return (<HashItem onClick={() => history.push(`/searchnews/:keyword=${n.split("#")[1]}`)}
+                         key={i}>{n}</HashItem>
                         )})}  
                     </HashTag>
                 </Div>
