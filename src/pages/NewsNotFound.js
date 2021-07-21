@@ -4,12 +4,14 @@ import styled from "styled-components";
 import {Footer, Header} from "../components/";
 import {actionCreators as newsActions} from "../redux/modules/news"
 import {BottomBar} from "../components/";
+import {history} from "../redux/configureStore";
 
 const NewsNotFound = (props) => {
     const keyword = props
         .location
         .pathname
         .split("/notfound/")[1]
+    const recommend= ["설문조사","델타변이","G7","택배","플랫폼"]
 
     return (
         <React.Fragment>
@@ -26,11 +28,10 @@ const NewsNotFound = (props) => {
                     <SearchOption>
                         <SearchTitle>고슴이 추천 키워드
                         </SearchTitle>
-                        <SearchItem>설문조사</SearchItem>
-                        <SearchItem>델타변이</SearchItem>
-                        <SearchItem>G7</SearchItem>
-                        <SearchItem>택배</SearchItem>
-                        <SearchItem>플랫폼</SearchItem>
+                        {recommend.map(function(n,i){
+                                    return( <SearchItem onClick={()=>history.push(`/searchnews/:$keyword$=${n}`)}
+                                        key={i}>{n}</SearchItem>)
+                                })}
                     </SearchOption>
 
                 </SearchResult>
