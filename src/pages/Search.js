@@ -1,16 +1,15 @@
 import React, {useState}from "react";
 import styled from "styled-components";
 import {history} from "../redux/configureStore";
-import {BottomBar,Spinner} from "../components/";
-import { useDispatch, useSelector } from "react-redux"
-import {actionCreators as newsActions} from "../redux/modules/news"
+import {BottomBar} from "../components/";
+import { useDispatch } from "react-redux"
 const Search = (props) => {
     const dispatch = useDispatch();
     const [text, setText] = useState("");
     const recommend= ["설문조사","델타변이","G7","택배","플랫폼"]
     const write = () =>{
         if (text===""){
-           window.alert("검색어를 입력해주세요!");
+            window.alert("검색어를 입력해주세요!");
             return;
         }
         setText();
@@ -23,7 +22,7 @@ const Search = (props) => {
 
     const onKeyPress=(e)=>{
         if(e.key=='Enter'){
-           write();
+            write();
         }
     }
     
@@ -131,7 +130,6 @@ const IconArrow = styled.i `
         -webkit-transform: translateY(-50%);
         transform: translateY(-50%)};      
 `;
-
 const TextFieldInput = styled.input `
     font-weight:bolder;
     height: 52px;
@@ -153,15 +151,14 @@ const SearchResult = styled.div `
     letter-spacing: -.0125rem;
 `;
 const SearchOption = styled.div `
-padding: 2rem 0px 3rem;
-display: block;
-
-
+    padding: 2rem 0px 3rem;
+    display: block;
 `;
+
 const SearchTitle = styled.div `
-margin: 1rem 0px;
-font-size: 1.25rem;
-font-weight: 700;
+    margin: 1rem 0px;
+    font-size: 1.25rem;
+    font-weight: 700;
     color: #161616;
     line-height: 1.4;
     word-break: keep-all;
@@ -169,7 +166,6 @@ font-weight: 700;
     margin-block-end: 0.83em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
-
 `;
 
 const SearchItem = styled.div `

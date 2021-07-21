@@ -56,7 +56,7 @@ const A = styled.a`
     }
 `;
 
-const CategoryBackdrop = styled.div`
+const CategoryBackdrop = styled.div `
     height: 67px;
     @media (max-width: 1080px) {
         height: 52px;

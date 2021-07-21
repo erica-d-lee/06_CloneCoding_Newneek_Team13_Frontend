@@ -18,6 +18,7 @@ const App = () => {
                     <Route path="/searchnews/:keyword" exact component={SearchNews}/>
                     <Route path="/detailnews/:id" exact component={DetailNews}/>
                     <Route path="/searchnews/notfound/:keyword" exact component={NewsNotFound}/>
+                    
             </ConnectedRouter>
             <Spinner visible={is_loading} />
             </React.Fragment>

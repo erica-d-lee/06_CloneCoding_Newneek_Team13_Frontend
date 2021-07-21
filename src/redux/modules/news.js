@@ -2,8 +2,6 @@ import {createAction, handleActions} from "redux-actions";
 import {produce} from 'immer';
 import {history} from '../configureStore';
 
-
-
 // 액션타입
 const SET_NEWS = 'SET_NEWS';
 const DETAIL_NEWS = 'DETAIL_NEWS';
@@ -25,7 +23,7 @@ const loading = createAction(LOADING, (is_loading) => ({ is_loading }));
 // 기본값 정하기
 const initialState = {
     is_loading: false,
-    list: [],
+    list: []
 };
 
 // 액션함수
@@ -61,7 +59,7 @@ const setOneNewsDB = (postId) => { // 상세페이지 개별 뉴스 불러오기
     };
 };
 
-const setCategoryNewsDB = (category) => {    // 카테고리별 뉴스 불러오기
+const setCategoryNewsDB = (category) => { // 카테고리별 뉴스 불러오기
     return function (dispatch) {
         const axios = require('axios');
         dispatch(loading(true));
@@ -77,7 +75,7 @@ const setCategoryNewsDB = (category) => {    // 카테고리별 뉴스 불러오
     };
 };
 
-const sendMail = (email, nickname) => {     // 환영 메일 발송하기
+const sendMail = (email, nickname) => { // 환영 메일 발송하기
     return function (dispatch) {
         const axios = require('axios');
         axios
@@ -94,23 +92,24 @@ const sendMail = (email, nickname) => {     // 환영 메일 발송하기
     }
 }
 
-const setSearchDB = (keyword, sort) => {      // 검색결과 뉴스 불러오기
-  return function (dispatch) {
-    const axios = require('axios');
-    dispatch(loading(true));
-    axios
-        .get(`http://15.164.244.197/api/search?keyword=${keyword}&sort=${sort}`)
-        .then((response) => {
-            dispatch(setSearch(response.data.post))
-        })
-        .catch((err) => {
-            if (err.response.status === 403) {dispatch(loading(false));history.push(`/searchnews/notfound/${keyword}`)}
+const setSearchDB = (keyword, sort) => { // 검색결과 뉴스 불러오기
+    return function (dispatch) {
+        const axios = require('axios');
+        dispatch(loading(true));
+        axios
+            .get(`http://15.164.244.197/api/search?keyword=${keyword}&sort=${sort}`)
+            .then((response) => {
+                dispatch(setSearch(response.data.post))
+            })
+            .catch((err) => {
+                if (err.response.status === 403) {
+                    dispatch(loading(false));
+                    history.push(`/searchnews/notfound/${keyword}`)
+                }
 
-        });
-      } 
-    };
-
-
+            });
+    }
+};
 
 export default handleActions({
     [SET_NEWS]: (state, action) => produce(state, (draft) => {
@@ -131,18 +130,15 @@ export default handleActions({
         draft.is_loading = false;
     }),
     [SET_SEARCH]: (state, action) => produce(state, (draft) => {
-      console.log(action.payload.news_list)
+        console.log(action.payload.news_list)
         draft.list = [...action.payload.news_list];
         draft.is_loading = false;
     }),
 
-    [LOADING]: (state, action) =>
-      produce(state, (draft) => {
+    [LOADING]: (state, action) => produce(state, (draft) => {
         draft.is_loading = action.payload.is_loading;
-      }),
-
+    })
 }, initialState);
-
 
 // 액션 생성자
 const actionCreators = {

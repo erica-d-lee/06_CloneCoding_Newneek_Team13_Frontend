@@ -73,7 +73,7 @@ const DetailContent = () => {
                     <HashTag>
                       { news.hashtag.map(function(n,i){
                         return (<HashItem onClick={() => history.push(`/searchnews/:keyword=${n.split("#")[1]}`)}
-                         key={i}>{n}</HashItem>
+                        key={i}>{n}</HashItem>
                         )})}  
                     </HashTag>
                 </Div>

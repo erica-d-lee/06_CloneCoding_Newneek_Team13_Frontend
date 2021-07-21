@@ -1,8 +1,6 @@
-import React, {useEffect} from "react";
-import {useDispatch} from "react-redux";
+import React from "react";
 import styled from "styled-components";
 import {Footer, Header} from "../components/";
-import {actionCreators as newsActions} from "../redux/modules/news"
 import {BottomBar} from "../components/";
 import {history} from "../redux/configureStore";
 
@@ -71,20 +69,18 @@ const SearchResult = styled.section `
     & span {
         color: rgb(153, 153, 153);
     }
-}
-
 
 `;
 const SearchOption = styled.div `
-padding: 2rem 0px 3rem;
-display: block;
+    padding: 2rem 0px 3rem;
+    display: block;
 
 
 `;
 const SearchTitle = styled.div `
-margin: 1rem 0px;
-font-size: 1.25rem;
-font-weight: 700;
+    margin: 1rem 0px;
+    font-size: 1.25rem;
+    font-weight: 700;
     color: #161616;
     line-height: 1.4;
     word-break: keep-all;

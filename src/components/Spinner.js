@@ -15,7 +15,13 @@ const Spinner = (props) => {
         <div>
             <SpinnerWrap>
                 <Spinnerinner>
-                    <img src={gosumspinner} alt={gosumspinner} style={{ width: 250, height: 250 }} />
+                    <img
+                        src={gosumspinner}
+                        alt={gosumspinner}
+                        style={{
+                            width: 250,
+                            height: 250
+                        }}/>
                 </Spinnerinner>
             </SpinnerWrap>
         </div>
@@ -28,29 +34,28 @@ Spinner.propTypes = {                          // 연구 필요
 
 export default Spinner;
 
-const SpinnerWrap= styled.div` 
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  background-color: #ebebeb;
-  z-index: 100;
+const SpinnerWrap = styled.div ` 
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #ebebeb;
+    z-index: 100;
 `;
 
-const Spinnerinner= styled.div`
-  animation: spin 7s linear infinite;
-  animation-delay: 0;
-
-  @keyframes spin {
+const Spinnerinner = styled.div `
+    animation: spin 7s linear infinite;
+    animation-delay: 0;
+    @keyframes spin {
     from {
         transform: rotate(0);
     }
     to {
         transform: rotate(360deg);
     }
-  }
-  `;
+}
+`;
