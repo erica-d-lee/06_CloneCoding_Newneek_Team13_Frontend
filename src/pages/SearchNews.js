@@ -8,7 +8,6 @@ import {BottomBar} from "../components/";
 const SearchNews = (props) => {
 
     const dispatch=useDispatch()
-    const loading = useSelector((state) => state.news.is_loading);
     const newsList=useSelector(state=>state.news.list)
 
     const [sort,setSort]=useState("date")
@@ -18,13 +17,8 @@ const SearchNews = (props) => {
     useEffect(()=>{
         dispatch(newsActions.setSearchDB(keyword_dec,sort))
     },[])
-  
     
     return (
-        <>
-        {loading ? (
-            <Spinner />
-          ) : (
         <React.Fragment>
             <Header/>
             <SNMain>
@@ -50,7 +44,6 @@ const SearchNews = (props) => {
             <Footer/>
             <BottomBar/>
         </React.Fragment>
-   )} </>
     );
 };
 

@@ -19,7 +19,6 @@ const setCategoryNews = createAction(
     (news_list) => ({news_list})
 );
 const setSearch = createAction(SET_SEARCH, (news_list) => ({news_list}));
-
 const loading = createAction(LOADING, (is_loading) => ({ is_loading }));
 
 
@@ -30,13 +29,6 @@ const initialState = {
 };
 
 // 액션함수
-
-const setLoading=()=>{
-    return function (dispatch){
-        dispatch(loading(true));
-    };
-};
-
 const setNewsDB = () => { // 메인페이지 뉴스 목록 불러오기
     return function (dispatch) {
         dispatch(loading(true));
@@ -94,7 +86,6 @@ const sendMail = (email, nickname) => {     // 환영 메일 발송하기
                 nickname: nickname
             })
             .then((response) => {
-                // console.log(response.data);
                 window.alert('구독 신청이 완료되었습니다');
             })
             .catch((err) => {
@@ -137,6 +128,7 @@ export default handleActions({
 
     [SET_CATEGORY_NEWS]: (state, action) => produce(state, (draft) => {
         draft.list = [...action.payload.news_list.post];
+        draft.is_loading = false;
     }),
     [SET_SEARCH]: (state, action) => produce(state, (draft) => {
       console.log(action.payload.news_list)
@@ -159,7 +151,6 @@ const actionCreators = {
     setCategoryNewsDB,
     setSearchDB,
     sendMail,
-    setLoading,
 }
 
 export {

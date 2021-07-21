@@ -7,15 +7,13 @@ import {actionCreators as newsActions} from "../redux/modules/news"
 const Search = (props) => {
     const dispatch = useDispatch();
     const [text, setText] = useState("");
-    const loading = useSelector((state) => state.news.is_loading);
     const recommend= ["설문조사","델타변이","G7","택배","플랫폼"]
     const write = () =>{
         if (text===""){
            window.alert("검색어를 입력해주세요!");
-            return;}
-        
+            return;
+        }
         setText();
-        dispatch(newsActions.setLoading())
         history.push(`/searchnews/:keyword=${text}`);  
     };
 
@@ -30,12 +28,7 @@ const Search = (props) => {
     }
     
         return (
-            <>
-            {loading ? (
-                <Spinner />
-              ) : (
             <React.Fragment>
-                <SearchBack>
                     <SearchForm>
                         <TextField>
                             <SearchClose onClick={() => {
@@ -65,21 +58,10 @@ const Search = (props) => {
                             </SearchOption>
                         </SearchResult>
                     </SearchForm>
-                </SearchBack>
                 <BottomBar/>
             </React.Fragment>
-              )}</>
 );
 };
-
-Search.defaultProps = {};
-
-const SearchBack = styled.div `
-    backgroundColor: green;
-    width: 100%;
-    height:100%
-    
-`;
 
 const SearchForm = styled.form `
     background: #ebebeb;

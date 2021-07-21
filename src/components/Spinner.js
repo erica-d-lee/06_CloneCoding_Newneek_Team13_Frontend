@@ -1,9 +1,16 @@
 import React from "react";
 import gosumspinner from "../shared/gosumspinner.png";
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 
-const Spinner = () => {
+const Spinner = (props) => {
+    if (!props.visible) {                       // 연구 필요
+        return (
+            <></>
+        )
+    } 
+
     return (
         <div>
             <SpinnerWrap>
@@ -14,6 +21,10 @@ const Spinner = () => {
         </div>
     );
 };
+
+Spinner.propTypes = {                          // 연구 필요
+    visible: PropTypes.bool
+}
 
 export default Spinner;
 
@@ -26,6 +37,8 @@ const SpinnerWrap= styled.div`
   align-items: center;
   width: 100vw;
   height: 100vh;
+  background-color: #ebebeb;
+  z-index: 100;
 `;
 
 const Spinnerinner= styled.div`
