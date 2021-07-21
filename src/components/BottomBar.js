@@ -3,22 +3,36 @@ import styled from 'styled-components';
 
 const BottomBar = () => {
     return (
-    <React.Fragment>
-        <Bottombar>
-        <A class="is-active" href="/"><Span role="img" aria-label="" class="emoji">🏠</Span><Span2>홈</Span2></A>
-        <A class="" href="/search"><Span role="img" aria-label="" class="emoji">🔍</Span><Span2>검색</Span2></A>
-        <A class="" href="/"><Span role="img" aria-label="" class="emoji">💰</Span><Span2>경제기본기</Span2></A>
-        <A href="/" class=""><Span
-        role="img" aria-label="" class="emoji">🌹</Span><Span2>여성의 날</Span2></A>
-        <A class="" href="/"><Span role="img" aria-label="" class="emoji">🙍</Span><Span2>마이페이지</Span2></A>
-        </Bottombar>
-    </React.Fragment>
+        <React.Fragment>
+            <Bottombar>
+                <A class="is-active" href="/">
+                    <Span role="img" aria-label="" class="emoji">🏠</Span>
+                    <Span2>홈</Span2>
+                </A>
+                <A class="" href="/search">
+                    <Span role="img" aria-label="" class="emoji">🔍</Span>
+                    <Span2>검색</Span2>
+                </A>
+                <A class="" href="/">
+                    <Span role="img" aria-label="" class="emoji">💰</Span>
+                    <Span2>경제기본기</Span2>
+                </A>
+                <A href="/" class="">
+                    <Span role="img" aria-label="" class="emoji">🌹</Span>
+                    <Span2>여성의 날</Span2>
+                </A>
+                <A class="" href="/">
+                    <Span role="img" aria-label="" class="emoji">🙍</Span>
+                    <Span2>마이페이지</Span2>
+                </A>
+            </Bottombar>
+        </React.Fragment>
     );
 };
 
 BottomBar.defaultProps = {};
 
-const Bottombar = styled.div`
+const Bottombar = styled.div `
     display: none;
     justify-content: space-around;
     width: 100%;
@@ -34,7 +48,7 @@ const Bottombar = styled.div`
         display: flex ;
     }
 `;
-const A = styled.a`
+const A = styled.a `
     display: block;
     width: 100%;
     box-sizing: border-box;
@@ -43,7 +57,7 @@ const A = styled.a`
     color: #666;
     `;
 
-const Span = styled.span`
+const Span = styled.span `
     display: flex;
     align-items: center;
     justify-content: center;
@@ -56,11 +70,11 @@ const Span = styled.span`
     margin: 0 auto;
     font-size: 1.25rem;
 `;
-const Span2 = styled.span`
+const Span2 = styled.span `
     display: block;
     margin-top: -.25rem;
     font-size: 11px;
     transition: all .4s ease;
 `;
 
-export default BottomBar ;
+export default BottomBar;

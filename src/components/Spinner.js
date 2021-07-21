@@ -2,13 +2,18 @@ import React from "react";
 import gosumspinner from "../shared/gosumspinner.png";
 import styled from 'styled-components';
 
-
 const Spinner = () => {
     return (
         <div>
             <SpinnerWrap>
                 <Spinnerinner>
-                    <img src={gosumspinner} alt={gosumspinner} style={{ width: 250, height: 250 }} />
+                    <img
+                        src={gosumspinner}
+                        alt={gosumspinner}
+                        style={{
+                            width: 200,
+                            height: 200
+                        }}/>
                 </Spinnerinner>
             </SpinnerWrap>
         </div>
@@ -17,7 +22,7 @@ const Spinner = () => {
 
 export default Spinner;
 
-const SpinnerWrap= styled.div` 
+const SpinnerWrap = styled.div ` 
   position: fixed;
   top: 0;
   left: 0;
@@ -28,7 +33,7 @@ const SpinnerWrap= styled.div`
   height: 100vh;
 `;
 
-const Spinnerinner= styled.div`
+const Spinnerinner = styled.div `
   animation: spin 7s linear infinite;
   animation-delay: 0;
 

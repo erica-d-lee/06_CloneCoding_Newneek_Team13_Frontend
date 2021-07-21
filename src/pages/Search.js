@@ -149,7 +149,6 @@ const IconArrow = styled.i `
         -webkit-transform: translateY(-50%);
         transform: translateY(-50%)};      
 `;
-
 const TextFieldInput = styled.input `
     font-weight:bolder;
     height: 52px;
@@ -171,15 +170,14 @@ const SearchResult = styled.div `
     letter-spacing: -.0125rem;
 `;
 const SearchOption = styled.div `
-padding: 2rem 0px 3rem;
-display: block;
-
-
+    padding: 2rem 0px 3rem;
+    display: block;
 `;
+
 const SearchTitle = styled.div `
-margin: 1rem 0px;
-font-size: 1.25rem;
-font-weight: 700;
+    margin: 1rem 0px;
+    font-size: 1.25rem;
+    font-weight: 700;
     color: #161616;
     line-height: 1.4;
     word-break: keep-all;
@@ -187,7 +185,6 @@ font-weight: 700;
     margin-block-end: 0.83em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
-
 `;
 
 const SearchItem = styled.div `

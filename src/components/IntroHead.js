@@ -1,5 +1,5 @@
-import React, { memo, useRef, useState } from "react";
-import { useDispatch } from 'react-redux';
+import React, {memo, useRef, useState} from "react";
+import {useDispatch} from 'react-redux';
 import styled from "styled-components";
 import gosumHome from "../shared/gosumHome.png";
 import {actionCreators as newsActions} from '../redux/modules/news';
@@ -43,7 +43,8 @@ const IntroHead = () => {
                         특보!
                         <span>🗞️</span>
                         우리가 시간이 없지,
-                        <MobileBlock> 세상이 안 궁금하냐!</MobileBlock>
+                        <MobileBlock>
+                            세상이 안 궁금하냐!</MobileBlock>
                     </IntroInner>
                 </IntroHeadTitle>
                 <IntroHeadDescription>
@@ -55,17 +56,35 @@ const IntroHead = () => {
                         </IntroHeadMainhead>
                         <Subscribe>
                             <TextFiled>
-                                <SubInput type="text" name="email" placeholder="이메일 주소" ref={inputM} onChange={(e) => {setEmail(e.target.value)}}/></TextFiled>
+                                <SubInput
+                                    type="text"
+                                    name="email"
+                                    placeholder="이메일 주소"
+                                    ref={inputM}
+                                    onChange={(e) => {
+                                        setEmail(e.target.value)
+                                    }}/></TextFiled>
                             <TextFiled>
-                                <SubInput type="text" name="name" placeholder="닉네임" ref={inputN} onChange={(e) => {setNickname(e.target.value)}}/>
+                                <SubInput
+                                    type="text"
+                                    name="name"
+                                    placeholder="닉네임"
+                                    ref={inputN}
+                                    onChange={(e) => {
+                                        setNickname(e.target.value)
+                                    }}/>
                             </TextFiled>
                             <div margin="0.5rem 0px 0px;"></div>
                             <CheckBox>
                                 <CheckInput/>
-                                <SubscribeAgree type="checkbox" id='input_check' />
+                                <SubscribeAgree type="checkbox" id='input_check'/>
                                 <UnderLine>개인정보 수집·이용</UnderLine>에 동의합니다
                             </CheckBox>
-                            <SubscribeBtn type='button' onClick={() => {submit();}}>
+                            <SubscribeBtn
+                                type='button'
+                                onClick={() => {
+                                    submit();
+                                }}>
                                 뉴스레터 무료로 구독하기
                             </SubscribeBtn>
                         </Subscribe>

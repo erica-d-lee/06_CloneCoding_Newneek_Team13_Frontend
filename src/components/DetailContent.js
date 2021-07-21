@@ -13,7 +13,7 @@ const DetailContent = () => {
   const postId = window.location.pathname.split('/detailnews/')[1];
   const news_list = useSelector((state) => state.news.list);
   const news = news_list.find((news_item) => news_item.postId == postId);
- 
+
   useEffect(() => {
       if (news) {
           return;

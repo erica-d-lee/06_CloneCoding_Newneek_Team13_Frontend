@@ -8,10 +8,22 @@ const Economy = () => {
         <React.Fragment>
             <HomeEconomy>
                 <Figure>
-                    <img src={gosum} style={{verticalAlign: 'middle', width: '100%', border: '0px'}} alt=''></img>
+                    <img
+                        src={gosum}
+                        style={{
+                            verticalAlign: 'middle',
+                            width: '100%',
+                            border: '0px'
+                        }}
+                        alt=''></img>
                 </Figure>
                 <Mangrove onClick={() => window.alert('화이팅!')}>
-                    <Text value='고슴이는 경제초보에서 탈출할 수 있을까요?' fontColor='#000' fontWeight='500' span detailText />
+                    <Text
+                        value='고슴이는 경제초보에서 탈출할 수 있을까요?'
+                        fontColor='#000'
+                        fontWeight='500'
+                        span="span"
+                        detailText="detailText"/>
                     <Arrow>
                         <Line></Line>
                     </Arrow>
@@ -21,17 +33,16 @@ const Economy = () => {
     );
 };
 
-Economy.defaultProps = {
-    
-};
+Economy.defaultProps = {};
 
-const HomeEconomy = styled.a`
+const HomeEconomy = styled.a `
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     margin: 14rem 0 8rem;
     border-top: 2px solid #000;
+    border-bottom: 0.8px solid #000;
     background: #fb7800;
     position: relative;
     &:hover {
@@ -42,13 +53,13 @@ const HomeEconomy = styled.a`
     }
 `;
 
-const Figure = styled.figure`
+const Figure = styled.figure `
     max-width: 340px;
     margin: -6rem 0 -3rem 0;
     display: block;
 `;
 
-const Mangrove = styled.div`
+const Mangrove = styled.div `
     display: flex;
     justify-content: center;
     align-items: center;
@@ -61,14 +72,14 @@ const Mangrove = styled.div`
     cursor: pointer;
 `;
 
-const Arrow = styled.div`
+const Arrow = styled.div `
     max-width: 67px;
     flex-grow: 1;
     margin: 0 3px 0 11px;
     padding: 17px 0;
 `;
 
-const Line = styled.div`
+const Line = styled.div `
     width: 100%;
     height: 2px;
     background: #000;
@@ -92,5 +103,4 @@ const Line = styled.div`
     }
 `;
 
-
-export default Economy ;
+export default Economy;

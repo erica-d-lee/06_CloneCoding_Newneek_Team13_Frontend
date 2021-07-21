@@ -21,9 +21,19 @@ const Header = () => {
                                 <span>🌹</span>여성의 날</NavButton>
                         </NavbarMenuItem>
                     </NavbarMenu>
-                    <NavberLogo onClick={() => {
-                            history.push('/'); window.location.reload();}}>
-                        <img src={NEWNEEKlogo} alt="logo" style={{width: "100%"}}/>
+                    <NavberLogo
+                        onClick={() => {
+                            history.push('/');
+                            window
+                                .location
+                                .reload();
+                        }}>
+                        <img
+                            src={NEWNEEKlogo}
+                            alt="logo"
+                            style={{
+                                width: "100%"
+                            }}/>
                     </NavberLogo>
                     <SearchButton
                         onClick={() => {
