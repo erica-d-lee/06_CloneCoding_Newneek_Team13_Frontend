@@ -9,5 +9,5 @@ Team13_ NEWNEEKER
 
 ###### 세상 돌아가는 소식, 알고는 싶지만 신문 볼 새 없이 바쁜 게 우리 탓은 아니잖아요! ###### 뉴닉 사이트를 클론코딩했습니다!
 
-*NEWNEEKER <newneeker.site>
+*NEWNEEKER <http://newneeker.site>
 
