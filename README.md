@@ -1,4 +1,5 @@
-![Alt text](./shared/NEWNEEKlogo.png)
+![gosumteam2](https://user-images.githubusercontent.com/85476908/126646686-42f09065-3d01-4c58-86f7-d9f9165c8714.png)
+
 NEWNEEK CloneCoding
 =============
 Team13_ NEWNEEKER
