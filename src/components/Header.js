@@ -15,10 +15,23 @@ const Header = () => {
                     <NavbarMenu>
                         <NavbarMenuItem>
                             <NavButton>
-                                <span>💰</span>경제기본기
+                                <a
+                                    style={{
+                                        textDecoration: "none",
+                                        color: "#161616"
+                                    }}
+                                    href="https://github.com/leedmeen/CloneCoding_team13_NEWNEEK">
+                                    <span>💰</span>경제기본기</a>
                             </NavButton>
                             <NavButton>
-                                <span>🌹</span>여성의 날</NavButton>
+                                <a
+                                    style={{
+                                        textDecoration: "none",
+                                        color: "#161616"
+                                    }}
+                                    href="https://github.com/yzkim9501/newnic_clone_backend">
+                                    <span>🌹</span>여성의 날</a>
+                            </NavButton>
                         </NavbarMenuItem>
                     </NavbarMenu>
                     <NavberLogo

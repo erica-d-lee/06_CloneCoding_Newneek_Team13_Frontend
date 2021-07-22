@@ -19,8 +19,8 @@ const Spinner = (props) => {
                         src={gosumspinner}
                         alt={gosumspinner}
                         style={{
-                            width: 250,
-                            height: 250
+                            width: 225,
+                            height: 225
                         }}/>
                 </Spinnerinner>
             </SpinnerWrap>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { ConnectedRouter } from "connected-react-router";
-import {Search, CategoryNews, DetailNews, Main, SearchNews,NewsNotFound} from "../pages";
+import {Search, CategoryNews, DetailNews, Main, SearchNews,NewsNotFound,TeamPage} from "../pages";
 import {Spinner} from '../components';
 import {Route} from "react-router-dom";
 import {history} from "../redux/configureStore";
@@ -18,7 +18,7 @@ const App = () => {
                     <Route path="/searchnews/:keyword" exact component={SearchNews}/>
                     <Route path="/detailnews/:id" exact component={DetailNews}/>
                     <Route path="/searchnews/notfound/:keyword" exact component={NewsNotFound}/>
-                    
+                    <Route path="/TeamPage" exact component={TeamPage}/>
             </ConnectedRouter>
             <Spinner visible={is_loading} />
             </React.Fragment>

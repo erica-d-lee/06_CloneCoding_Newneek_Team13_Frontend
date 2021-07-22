@@ -13,15 +13,15 @@ const BottomBar = () => {
                     <Span role="img" aria-label="" class="emoji">🔍</Span>
                     <Span2>검색</Span2>
                 </A>
-                <A class="" href="/">
+                <A href="https://github.com/leedmeen/CloneCoding_team13_NEWNEEK">
                     <Span role="img" aria-label="" class="emoji">💰</Span>
                     <Span2>경제기본기</Span2>
                 </A>
-                <A href="/" class="">
+                <A href="https://github.com/yzkim9501/newnic_clone_backend">
                     <Span role="img" aria-label="" class="emoji">🌹</Span>
                     <Span2>여성의 날</Span2>
                 </A>
-                <A class="" href="/">
+                <A class="" href="/TeamPage">
                     <Span role="img" aria-label="" class="emoji">🙍</Span>
                     <Span2>마이페이지</Span2>
                 </A>

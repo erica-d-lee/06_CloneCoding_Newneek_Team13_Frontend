@@ -8,6 +8,13 @@ import {Helmet} from 'react-helmet';
 import {history} from "../redux/configureStore";
 import Spinner from "./Spinner"
 const DetailContent = () => {
+  const [scrollPosition, setScrollPosition] = useState(0);
+    const updateScroll = () => {
+        setScrollPosition(window.scrollY || document.documentElement.scrollTop);
+    }
+    useEffect(()=>{
+        window.addEventListener('scroll', updateScroll);
+    });
 
   const dispatch = useDispatch();
   const postId = window.location.pathname.split('/detailnews/')[1];
@@ -23,7 +30,7 @@ const DetailContent = () => {
   
   if (!news){
     return (
-      <Spinner/>
+      <div/>
     )
   } 
 
@@ -56,11 +63,13 @@ const DetailContent = () => {
                     }}>
                     <PostHead>
                         <RunningHead onClick={() => {history.push(`/category/${category_value}`)}}>{news.category}</RunningHead>
-                        <Headline>{news.title}</Headline>
+                        {scrollPosition  < 125 ? <Headline>{news.title}</Headline> :
+                      <HeadlineSticky>{news.title}</HeadlineSticky>}
                         <HeadDate>{news.date}</HeadDate>
                         <ProgressBar/>
                     </PostHead>
                     <PostBody>
+                     
                         <div 
                             className='Room for Data'
                             style={{
@@ -130,6 +139,25 @@ const Headline = styled.h2 `
   margin: 0;
   display: block;
 `;
+
+const HeadlineSticky =styled.h2 `
+    position: fixed;
+    top: 0;
+    left: auto;
+    right: auto;
+    padding: auto;
+    margin-top: 9px;
+    font-size: 1.25rem;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    z-index:15;
+    display: block;
+    left: 50%; 
+    transform: translateX(-50%);
+`;
+
 
 const HeadDate = styled.time `
   font-size: 1.125rem;

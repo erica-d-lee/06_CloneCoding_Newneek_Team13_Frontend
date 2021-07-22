@@ -1,9 +1,9 @@
 import React, {useEffect, useState, } from "react";
 import { useDispatch, useSelector} from "react-redux";
 import styled from "styled-components";
-import {Footer, Header, CardList,Spinner} from "../components/";
+import {Footer, Header, CardList,BottomBar} from "../components/";
 import {actionCreators as newsActions} from "../redux/modules/news"
-import {BottomBar} from "../components/";
+
 
 const SearchNews = (props) => {
 
