@@ -46,35 +46,27 @@ const CardList = (props) => {
         setEnd(end + 12); // 마지막 뉴스 번호에 12를 더함
     }
 
-    return (
-        <React.Fragment>
-            {
-                category
-                    ? <Helmet>
-                            <title>'{category.split(' ')[1]}' 콘텐츠</title>
-                        </Helmet>
-                    : <Helmet>
-                            <title>뉴닉 NEWNEEK</title>
-                        </Helmet>
-            }
-            <Posts>
-                {
-                    news_list && news_list.map((n) => {
-                        return <Card {...n}/>
-                    })
-                }
-            </Posts>
-            <PostsPagination>
-                <Button
-                    padding='10px 1.5rem 11px'
-                    margin='2rem auto'
-                    width='20rem'
-                    _onClick={() => {
-                        loadMoreNews()
-                    }}>더보기</Button>
-            </PostsPagination>
-        </React.Fragment>
-    )
+  return(
+    <React.Fragment>
+      { category ? 
+        <Helmet>
+          <title>'{category.split(' ')[1]}' 콘텐츠</title>
+        </Helmet>
+        :
+        <Helmet>
+          <title>뉴닉 NEWNEEK</title>
+        </Helmet>
+      }
+      <Posts>
+        {news_list && news_list.map((n, idx) => {
+          return <Card key={idx} {...n} />
+        })}
+      </Posts>
+      <PostsPagination>
+        <Button padding='10px 1.5rem 11px' margin='2rem auto' width='20rem' _onClick={() => {loadMoreNews()}}>더보기</Button>
+      </PostsPagination>
+    </React.Fragment>
+  )
 };
 
 const Posts = styled.div `

@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
 import {CardList, Category, Economy} from './';
-import {Menu, Button} from '../elements';
+import {Menu} from '../elements';
 
 const Body = (props) => {
     const url = window.location.pathname;
@@ -52,15 +52,15 @@ const Body = (props) => {
 };
 
 const HomeRecent = styled.section `
-  width: 90%;
-  max-width: 1360px;
-  margin: -3px auto 0px;
-  padding: 0px 5%;
-  position: relative;
-  @media (max-width: 1360px) {
-    max-width: 1040px;
-  display: block;
-  }
+    width: 90%;
+    max-width: 1360px;
+    margin: -3px auto 0px;
+    padding: 0px 5%;
+    position: relative;
+    @media (max-width: 1360px) {
+        max-width: 1040px;
+        display: block;
+    }
 `;
 
 export default Body;

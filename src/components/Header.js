@@ -72,7 +72,6 @@ const NavbarTop = styled.div `
     height: 30px;
     background: #fff;
     position: relative;
- 
 `;
 const NavbarTopIn = styled.div `
     background: linear-gradient(-45deg,#ebebeb 11px,transparent 0),linear-gradient(45deg,#ebebeb 11px,transparent 0);

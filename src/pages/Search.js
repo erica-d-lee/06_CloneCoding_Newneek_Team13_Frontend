@@ -1,16 +1,15 @@
 import React, {useState}from "react";
 import styled from "styled-components";
 import {history} from "../redux/configureStore";
-import {BottomBar,Spinner} from "../components/";
-import { useDispatch, useSelector } from "react-redux"
-import {actionCreators as newsActions} from "../redux/modules/news"
+import {BottomBar} from "../components/";
+import { useDispatch } from "react-redux"
 const Search = (props) => {
     const dispatch = useDispatch();
     const [text, setText] = useState("");
     const recommend= ["설문조사","델타변이","G7","택배","플랫폼"]
     const write = () =>{
         if (text===""){
-           window.alert("검색어를 입력해주세요!");
+            window.alert("검색어를 입력해주세요!");
             return;
         }
         setText();
@@ -23,7 +22,7 @@ const Search = (props) => {
 
     const onKeyPress=(e)=>{
         if(e.key=='Enter'){
-           write();
+            write();
         }
     }
     

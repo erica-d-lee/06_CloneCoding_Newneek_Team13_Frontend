@@ -4,32 +4,9 @@ import Text from '../elements/Text';
 import logo from '../shared/NEWNEEKlogo.png';
 
 const Card = (props) => {
-    const {
-        img,
-        value,
-        postId,
-        category,
-        title,
-        thumbnail,
-        plainContent,
-        date,
-        hashtag,
-        _onClick
-    } = props;
-    const emoji_list = {
-        '집콕': '🏠',
-        '국내정치': '⚖️',
-        '세계': '🌐',
-        '테크': '🤖',
-        '경제': '💰',
-        '노동/일': '💪',
-        '환경': '🌳',
-        '여성': '🧑',
-        '코로나19': '😷'
-    };
-    const emoji = category
-        ? emoji_list[category]
-        : '📃';
+  const { postId, category, title, thumbnail, plainContent, date } = props;
+  const emoji_list = {'집콕': '🏠', '국내정치': '⚖️', '세계': '🌐', '테크': '🤖', '경제': '💰', '노동/일': '💪', '환경': '🌳', '여성': '🧑', '코로나19': '😷'};
+  const emoji = category ? emoji_list[category] : '📃';
 
     if (thumbnail) { // 이미지 있을 때
         return (

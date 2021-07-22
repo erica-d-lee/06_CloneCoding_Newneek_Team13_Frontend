@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import {Footer, Header} from "../components/";
-import {actionCreators as newsActions} from "../redux/modules/news"
 import {BottomBar} from "../components/";
 import {history} from "../redux/configureStore";
 
