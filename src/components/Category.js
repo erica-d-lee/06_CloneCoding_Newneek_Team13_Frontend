@@ -14,7 +14,7 @@ const Category = () => {
                 {title_list.map(function(item, idx) {
                     if (url === item.url) {
                         return (<A className='category-link' key={idx} onClick={() => {
-                            history.push(`/${item.url}`);}} style={{borderBottom: '3px solid #000', paddingTop: '15px'}}><Menu name={item.title} /></A>)
+                            history.push(`/${item.url}`);}} style={{borderBottom: '3px solid #000', paddingTop: '20px'}}><Menu name={item.title} /></A>)
                     } else {
                         return (<A className='category-link' key={idx} onClick={() => {
                             history.push(`/${item.url}`);}}><Menu name={item.title} /></A>)
