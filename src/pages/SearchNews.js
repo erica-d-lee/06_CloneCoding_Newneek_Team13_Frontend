@@ -39,7 +39,11 @@ const SearchNews = (props) => {
                     </>
                     }
                 </Sorting>
-                <CardList keyword={keyword}/>
+                {sort === 'relative' ? 
+                <CardList keyword={keyword} relative />
+                :
+                <CardList keyword={keyword} date />
+                }
           </SNMain>
             <Footer/>
             <BottomBar/>
