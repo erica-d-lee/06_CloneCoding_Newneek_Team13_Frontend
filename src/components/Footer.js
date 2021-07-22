@@ -13,7 +13,9 @@ const Footer = () => {
             {
                 search_url === 'searchnews'
                     ? ""
-                    : <> < FooterStatic > <p>
+                    : <> < FooterStatic onClick={() => {
+                        history.push("./TeamPage")
+                    }}> <p>
                             퀴어 프렌들리한 팀을 위한
                             <MobileBlock>
                                 뉴닉 레인보우 가이드<span role="img" aria-label="">🏳️‍🌈</span>
@@ -21,7 +23,9 @@ const Footer = () => {
                         </p>
                         <Arrow><Line/></Arrow>
                     </FooterStatic>
-                    <FooterStatic>
+                    < FooterStatic onClick={() => {
+                        history.push("./TeamPage")
+                    }}> 
                         <p>3월 8일에 업데이트된
                             <MobileBlock>
                                 뉴닉의 여성용어 가이드<span role="img" aria-label="">🍞🌹</span>
@@ -32,7 +36,9 @@ const Footer = () => {
                 </>
             }
 
-            <FooterStatic>
+                    < FooterStatic onClick={() => {
+                        history.push("./TeamPage")
+                    }}> 
                 <p>
                     <MobileBlock>오늘까지
                         <b>487회</b>

@@ -1,12 +1,11 @@
-import React, {useState}from "react";
+import React from "react";
 import styled from "styled-components";
-import {Header, BottomBar,Footer} from "../components/";
-import {history} from "../redux/configureStore";
+import {Header, BottomBar} from "../components/";
 import gosumteam from "../shared/gosumteam.png";
 import gosumteam2 from "../shared/gosumteam2.png";
 import back from "../shared/back.png";
 const TeamPage = () => {
-    const [like,likeChange]=useState(0);
+  
     return (
         <React.Fragment>
             <Header/>
@@ -52,12 +51,6 @@ const ST = styled.p`
     @media (max-width: 700px) {
         letter-spacing: 4px;
     }
-`
-const H2 =styled.h2`
-    margin: .5rem 0 0;
-    font-size: 3rem;
-    font-weight: 900;
-
 `;
 const MobileBlock = styled.span`
     @media (max-width: 700px) {
