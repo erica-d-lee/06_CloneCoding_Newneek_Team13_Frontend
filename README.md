@@ -2,7 +2,7 @@
 
 NEWNEEK CloneCoding
 =============
-#Team13_ NEWNEEKER
+# Team13_ NEWNEEKER
 #### Frontend : 👩‍🦱이동민 🤹‍♂️최수임  
 #### Backend: 👧김예지 🧑박진홍 👩윤송
 
